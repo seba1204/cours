@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 10 10:55:35 2019
-
-@author: ptsi
-"""
 import numpy as np
 import matplotlib.pyplot as pl
 from matplotlib.animation import FuncAnimation
