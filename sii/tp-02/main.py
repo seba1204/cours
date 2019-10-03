@@ -1,5 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
+
+print ('Argument List:', str(sys.argv))
 
 def extractData(path):
     X, Y=[], []
@@ -15,10 +18,10 @@ def extractData(path):
         file.close()
     return (X, Y)
 
-A = extractData('data.csv')
+# A = extractData('data.csv')
 
-s = A[0]
-t = A[1]
+# s = A[0]
+# t = A[1]
 
-plt.magnitude_spectrum(s, scale='dB',color='C1')
-plt.show()
+# plt.magnitude_spectrum(s, scale='dB',color='C1')
+# plt.show()
