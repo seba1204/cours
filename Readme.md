@@ -20,11 +20,14 @@ Repository of my programs made in class (mainly python programs).
 │
 ├───info
 │   │
-│   └───cours-01
+│   ├───seance-01
+│   ├───seance-02
+│   └───seance-03
 │
 ├───pc
 │
 ├───sii
 │   │
-│   └───tp-01
+│   ├───tp-01
+│   └───tp-02
 ```
