@@ -1,6 +1,11 @@
 import numpy as np
+import os
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib.colors
 
-N = 11
+N = 30
 
 
 def initTab(dim):
@@ -12,30 +17,46 @@ def initTab(dim):
     return temp
 
 
-def oneLoop(temp, precision, loopMax):
+def oneLoop(temp):
     dim = np.shape(temp)[0]-1
     newTemp = np.array(temp)
-    delta = precision + 1
-    loopNb = 0
-    while (delta > precision and loopNb < loopMax):
-        if (delta > precision):
-            loopNb += 1
-            print('on tourne dans le vide')
-        elif loopNb > 0:
-            loopNb = 0
-        delta = 0
-        for line in range(1, dim):
-            for row in range(1, dim):
-                oldValue = newTemp[line][row]
-                newValue = temp[line-1][row] + \
-                    temp[line+1][row] + \
-                    temp[line][row - 1] + \
-                    temp[line][row + 1]
-                newValue /= 4
-                newTemp[line][row] = newValue
-                delta += abs(oldValue - newValue)
-        delta /= (dim - 1)**2
-    return newTemp
+    delta = 0
+    for line in range(1, dim):
+        for row in range(1, dim):
+            oldValue = newTemp[line][row]
+            newValue = temp[line-1][row] + \
+                temp[line+1][row] + \
+                temp[line][row - 1] + \
+                temp[line][row + 1]
+            newValue /= 4
+            newTemp[line][row] = newValue
+            if (delta < abs(oldValue - newValue)):
+                delta = abs(oldValue - newValue)
+    return (delta, newTemp)
 
 
-print(oneLoop(initTab(N), 10**(-5), 10))
+def allLoop(temp):
+    i = 0
+    delta = 2
+    plt.pcolor(temp, cmap='RdBu_r')
+    plt.colorbar(extend='max')
+    plt.title('Equation de la chaleur')
+    plt.draw()
+    plt.pause(7)
+    plt.clf()
+    while(delta > 1):
+        i += 1
+        A = oneLoop(temp)
+        delta = A[0]
+        temp = A[1]
+        plt.pcolor(temp, cmap='RdBu_r')
+        plt.colorbar(extend='max')
+        plt.title('Equation de la chaleur')
+        plt.draw()
+        plt.pause(0.0001)
+        plt.clf()
+    time.sleep(5)
+    return temp
+
+
+allLoop(initTab(N))
