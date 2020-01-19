@@ -167,9 +167,11 @@ def rotation(greyScaleArray, percentage):
 
 
 # plotImage(rotation(geryScale(img), 30), show=True)
-
+arrayToImage(rotation(geryScale(img), 30)).save('Ressources/rotatedCat.jpg')
 
 # Question 4 ──────────────────────────────────────────────────────────────────
+
+
 def negative(greyScaleArray):
     return -greyScaleArray
 
@@ -182,4 +184,4 @@ def seuil(greyScaleArray, seuil):
     return np.where(greyScaleArray < seuil, 0, 255)
 
 
-plotImage(seuil(geryScale(img), 127), show=True)
+# plotImage(seuil(geryScale(img), 127), show=True)
