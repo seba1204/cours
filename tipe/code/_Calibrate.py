@@ -43,7 +43,6 @@ def calibrate():
                 global value, k, hsvHigh, hsvLow
                 # on lit la vidéo frame par frame
                 _, frame = video.read()
-                print(index, value,  hsvLow)
                 if not _:
                     return False
                 # on filtre
