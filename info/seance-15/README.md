@@ -1,4 +1,4 @@
-# Tri pas insertion
+# Tri par insertion
 
 ## 1. Présentation
 
