@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{tcolorbox}
+
+\title{Devoir Libre 7}
+\author{Sébastien PONT}
+\date{27 Avril 2020}
+
+\definecolor{Red}{RGB}{231, 76, 60}
+\definecolor{Green}{RGB}{46, 204, 113}
+
+\newtcolorbox{result}{
+    before=\par\smallskip\centering,
+    after=\par,
+    hbox,
+    colframe=Green,
+    colback=green!5,
+    }
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{Red}}
+  {\thesection}
+  {1em}
+  {#1}
+  [{\titlerule[0.8pt]}]
+
+\setcounter{section}{-1}
+
+\begin{document}
+
+\maketitle
+
+\input{partie_0}
+\input{partie_1}
+\input{partie_2}
+\input{partie_3}
+
+\end{document}
