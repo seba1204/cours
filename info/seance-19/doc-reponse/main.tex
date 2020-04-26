@@ -1,16 +1,30 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[frenchb]{babel}
 
 \usepackage{listings}
-\usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{xcolor}
 \usepackage[explicit]{titlesec}
 \usepackage{tcolorbox}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{stmaryrd}
 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+
+\newcommand{\Author}{PONT Sébastien}
+\newcommand{\Date}{26 Avril 2020}
+
+
+\title{Séance 19 - Dérivée $n^{i\grave{e}me}$ - Méthode de Simpson}
+\date{}
 
 \newtcolorbox{result}{
     before=\par\smallskip\centering,
@@ -35,7 +49,7 @@
 \definecolor{Red}{RGB}{231, 76, 60}
 \definecolor{Green}{RGB}{46, 204, 113}
 
-%Code listing style named "mystyle"
+%Code listing style named "codeStyle"
 \lstdefinestyle{codeStyle}{
   backgroundcolor=\color{backcolour},
   commentstyle=\color{codegreen},
@@ -57,9 +71,18 @@
 
 \lstset{style=codeStyle}
 
-\title{Séance 19 - Dérivée $n^{i\grave{e}me}$ - Méthode de Simpson}
-\date{26 Avril 2020}
-\author{Sébastien PONT}
+\pagestyle{fancy}
+
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Informatique - Séance 19}
+\fancyhead[R]{\Date}
+
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{\Author}
+\fancyfoot[R]{Lycée Antoine Bourdelle}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+
+\fancypagestyle{plain}{}
 
 \begin{document}
 
