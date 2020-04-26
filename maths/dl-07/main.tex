@@ -1,17 +1,39 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+
+\usepackage{listings}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
 \usepackage{xcolor}
 \usepackage[explicit]{titlesec}
 \usepackage{tcolorbox}
 
-\title{Devoir Libre 7}
-\author{Sébastien PONT}
-\date{27 Avril 2020}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titling}
+
+
+\newcommand{\Author}{PONT Sébastien}
+\newcommand{\Date}{26 Avril 2020}
+
+
+\title{
+    \vspace{-1.5cm}
+    Devoir Libre 7
+    \vspace{-2.0cm}
+  }
+\date{}
+\author{}
 
 \definecolor{Red}{RGB}{231, 76, 60}
 \definecolor{Green}{RGB}{46, 204, 113}
-
 \newtcolorbox{result}{
     before=\par\smallskip\centering,
     after=\par,
@@ -26,6 +48,26 @@
   {1em}
   {#1}
   [{\titlerule[0.8pt]}]
+
+%New colors defined below
+\definecolor{Red}{RGB}{231, 76, 60}
+\definecolor{Green}{RGB}{46, 204, 113}
+
+
+\pagestyle{fancy}
+
+
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{Mathématiques - Devoir Libre 7}
+\fancyhead[R]{\Date}
+
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{\Author}
+\fancyfoot[R]{Lycée Antoine Bourdelle}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+
+\fancypagestyle{plain}{}
+
 
 \setcounter{section}{-1}
 
