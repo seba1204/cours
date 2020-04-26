@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{listings}
+\usepackage[top=1cm, bottom=1cm, left=2cm, right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd}
+
+
+\newtcolorbox{result}{
+    before=\par\smallskip\centering,
+    after=\par,
+    hbox,
+    colframe=Green,
+    colback=green!5,
+    }
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{Red}}
+  {\thesection}
+  {1em}
+  {#1}
+  [{\titlerule[0.8pt]}]
+
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{Red}{RGB}{231, 76, 60}
+\definecolor{Green}{RGB}{46, 204, 113}
+
+%Code listing style named "mystyle"
+\lstdefinestyle{codeStyle}{
+  backgroundcolor=\color{backcolour},
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=codeStyle}
+
+\title{Séance 19 - Dérivée $n^{i\grave{e}me}$ - Méthode de Simpson}
+\date{26 Avril 2020}
+\author{Sébastien PONT}
+
+\begin{document}
+
+\maketitle
+
+\input{question_1}
+\input{question_2}
+
+\end{document}
