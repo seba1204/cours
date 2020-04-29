@@ -1,1 +1,95 @@
 \section{Crête et talweg sur $\Sigma$}
+\begin{enumerate}
+  \item On reprend l'équation paramétrique de $\Sigma$. Soit $\theta\in[0,\pi[$ :
+        \begin{result}
+          $
+            \Gamma_\theta :
+            \left\{
+            \begin{array}{rcl}
+              x(r) & = & r \times \cos{(\theta)}                       \\
+              y(r) & = & r \times \sin{(\theta)}                       \\
+              z(r) & = & 3r^{2} \sin{(\theta)}\sin{(\theta - \varphi)} \\
+            \end{array}
+            \right.
+          $
+        \end{result}
+  \item
+        On a deux vecteurs directeurs de $P_\theta$ :
+        \[
+          \overrightarrow{\delta_\theta} =
+          \left(
+          \begin{array}{c}
+              \cos{(\theta)} \\
+              \sin{(\theta)} \\
+              0              \\
+            \end{array}
+          \right) et \overrightarrow{k} =
+          \left(
+          \begin{array}{c}
+              0 \\
+              0 \\
+              1 \\
+            \end{array}
+          \right)
+        \] On a alors : $\Gamma_\theta : r(\overrightarrow{\delta_\theta} + 3r\sin{(\theta)}\sin{(\theta - \varphi)}\overrightarrow{k})$. Donc $\Gamma_\theta \subset P_\theta$.
+
+  \item Dans le repère $(O, \overrightarrow{\delta_\theta}, overrightarrow{k})$ :
+        \[
+          y = x^{2} \times sin(\theta)sin(\theta - \varphi)
+        \]
+        Ainsi $\Gamma_\theta$ est une parabole si $sin(\theta)sin(\theta - \varphi) \neq 0$.
+        \begin{result}
+          $\Gamma_\theta$ est une parabole si $\theta\neq 0$ et $\theta\neq \varphi$.
+        \end{result}
+  \item \begin{enumerate}
+          \item On a, d'après la partie 1 :
+                \[
+                  \overrightarrow{n} =
+                  \iff r^{2}
+                  \left(
+                  \begin{array}{c}
+                      3\sin{(\theta_0)}\left[ \sin{(2\theta_0 - \varphi)} - 2\sin{(\theta_0 - \varphi)}\cos{(\theta_0)}\right]       \\
+                      3\left[ 2\sin^{2}{(\theta_0)}\sin{(\theta_0 - \varphi)} + \cos{(\theta_0)} \sin{(2\theta_0 - \varphi)} \right] \\
+                      1                                                                                                              \\
+                    \end{array}
+                  \right)
+                \]
+          \item Calculer l'intersection des deux : $P\theta$ et $\mathcal{N}_\theta(r)$
+          \item $2\theta = arctan(2\sqrt{2}) = \varphi$ ou $2\theta = \varphi + \frac{\pi}{2}$
+                \begin{result}
+                  $\alpha = \frac{\varphi}{2}$ et $\beta = \frac{\varphi}{2} + \frac{\pi}{4}$
+                \end{result}
+        \end{enumerate}
+  \item \textit{Pas de question 5...}
+  \item \begin{enumerate}
+          \item On a $x = 0$ d'où :
+                \begin{result}
+                  $
+                    \left\{
+                    \begin{array}{rcl}
+                      y & = & rsin(\theta)                     \\
+                      z & = & 3rsin(\theta)sin(\theta-\varphi) \\
+                    \end{array}
+                    \right.
+                  $
+                \end{result}
+                De plus on a $f(y,z) = f(-y,z)$ donc
+                \begin{result}
+                  L'axe $(O, z)$ est un axe de symétrie.
+                \end{result}
+          \item On calcule la $f'$ en $0$ et on trouve :
+                \begin{result}
+                  $
+                    \left\{
+                    \begin{array}{rcl}
+                      z & = & -y \\
+                      z & = & y  \\
+                    \end{array}
+                    \right.
+                  $
+                \end{result}
+        \end{enumerate}
+  \item \begin{enumerate}
+          \item Il faut trouver pour quels $\theta,  z'(\theta) = 0$  sur $[0, 2\pi[$
+        \end{enumerate}
+\end{enumerate}

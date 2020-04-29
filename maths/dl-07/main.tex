@@ -10,14 +10,20 @@
 \usepackage[explicit]{titlesec}
 \usepackage{tcolorbox}
 
-\usepackage{amsmath}
+\usepackage{amsmath} 
+\usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-\usepackage{stmaryrd}
+\usepackage{stmaryrd} 
+\usepackage{wasysym} % pour le smiley \frownie
 
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{titling}
+\usepackage{pifont} % Pour la puce de Gineste
+\usepackage{soul} % Pour souligner
+
+\usepackage{pgfplots} % Pour tracer des courbes
 
 
 \newcommand{\Author}{PONT Sébastien}
@@ -26,7 +32,8 @@
 
 \title{
     \vspace{-1.5cm}
-    Devoir Libre 7
+    Devoir Libre 7\\
+    Lignes sur un paraboloïde
     \vspace{-2.0cm}
   }
 \date{}
@@ -34,6 +41,9 @@
 
 \definecolor{Red}{RGB}{231, 76, 60}
 \definecolor{Green}{RGB}{46, 204, 113}
+\definecolor{Blue}{RGB}{41, 128, 185}
+\definecolor{Purple}{RGB}{155, 89, 182}
+\definecolor{DarkBlue}{RGB}{44, 62, 80}
 \newtcolorbox{result}{
     before=\par\smallskip\centering,
     after=\par,
