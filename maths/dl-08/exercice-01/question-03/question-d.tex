@@ -1,1 +1,64 @@
-qd
+Faison de même pour le point $I$, mais cette fois en dérivant.\\
+On reprant la même fontion $\overrightarrow{f}$.\\
+$\overrightarrow{f}$ est de classe $\mathcal{C}^\infty$ sur $\mathbb{R}$ en tant que composition de fonctions qui le sont.\\
+\[
+  \begin{array}{crcl}
+                           & \overrightarrow{f}(t) & = &
+    \left(
+    \begin{array}{c}
+        -2cos(t)-cos(2t) \\
+        2sin(t)-sin(2t)  \\
+      \end{array}
+    \right)                                              \\\\
+    \Rightarrow            &
+    \overrightarrow{f}'(t) & =                     &
+    \left(
+    \begin{array}{c}
+        2sin(t)+2sin(2t) \\
+        2cos(t)-2cos(2t) \\
+      \end{array}
+    \right)                                              \\
+  \end{array}
+\]
+Or, pour $t = \frac{2\pi}{3}$, $\overrightarrow{f}'(t)=(0, 0)$. On continue donc à dériver.
+\[
+  \overrightarrow{f}''(t)=
+  \left(
+  \begin{array}{c}
+      2cos(t)+4cos(2t)  \\
+      -2sin(t)+4sin(2t) \\
+    \end{array}
+  \right)
+\]
+Pour $t = \frac{2\pi}{3}$, $\overrightarrow{f}''(t)=\left(-\frac{3}{2}, -3\sqrt{3}\right)$. Voici notre première dérivée non nulle.
+\[
+  \overrightarrow{f}'''(t)=
+  \left(
+  \begin{array}{c}
+      -2sin(t)-8sin(2t) \\
+      -2cos(t)+8cos(2t) \\
+    \end{array}
+  \right)
+\]
+De même, pour $t = \frac{2\pi}{3}$, $\overrightarrow{f}'''(t)=\left(3\sqrt{3}, -3\right)$. Voici la seconde.
+\\De plus, on a bien la famille
+$\mathcal{F} = \left(
+  \left(
+    \begin{array}{c}
+        -\frac{3}{2} \\ -3\sqrt{3}
+      \end{array}
+    \right),
+  \left(
+    \begin{array}{c}
+        3\sqrt{3} \\ -3
+      \end{array}
+    \right)
+  \right)$ libre
+car $det(\mathcal{F}) = 4 \neq 0$.\\
+Ainsi, ici aussi, on a "$(p, q)= (2, 3)$". Donc, par propiété :
+\begin{result}
+  $I$ est un point de \textbf{rebroussement de 1\textsuperscript{ère} espèce.}
+\end{result}
+\textcolor{Blue}{\textit{\ul{Question :} Ca peut se noter $det(\mathcal{F})$ avec $\mathcal{F}$ une famille de vecteurs ?}}
+
+

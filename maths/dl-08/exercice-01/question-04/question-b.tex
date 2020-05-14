@@ -1,1 +1,29 @@
-qb
+Pour $t\in\mathbb{R}$, posons :
+\[
+  f(t) =
+  \left(
+  \begin{array}{c}
+      t                        \\
+      t^{2} - 2\sqrt{2}\beta t \\
+    \end{array}
+  \right)
+  \Rightarrow
+  f'(t) =
+  \left(
+  \begin{array}{c}
+      1                     \\
+      2(t - 2\sqrt{2}\beta) \\
+    \end{array}
+  \right)
+\]
+Définissons l'angle de relèvement $\alpha$ : \[\forall t\in\mathbb{R}, \alpha(t) = \arctan{(\frac{z'(t)}{y'(t)})}\]
+\[\iff\forall t\in\mathbb{R}, \alpha(t) = \arctan{(2(t-\sqrt{2}\beta))}\]
+Alors :
+\[
+  \forall t\in\mathbb{R},\gamma(t) = \frac{\alpha'(t)}{\left\|f'(t)\right\|}
+\]
+De plus, $\alpha$ est dérivable sur $\mathbb{R}$ :
+\[\forall t\in\mathbb{R}, \alpha'(t) = \frac{2}{1+4(t-\sqrt{2}\beta)^{2}}\]
+Donc :
+\[\forall t\in\mathbb{R}, \gamma(t) = \frac{2}{1+4(t-\sqrt{2}\beta)^{2}}\times \frac{1}{\sqrt{1+4(t-\sqrt{2}\beta)^{2}}}\]
+Ainsi, $\gamma$ est maximal pour $(1+4(t-\sqrt{2}\beta)^{2})^{3/2}$ minimal i.e. $t=\sqrt{2}\beta$

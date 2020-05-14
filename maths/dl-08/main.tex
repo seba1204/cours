@@ -22,12 +22,31 @@
 \usepackage{titling}
 \usepackage{pifont} % Pour la puce de Gineste
 \usepackage{soul} % Pour souligner
-
+\usepackage{enumitem} % Pour énumérer en mode normal dans une liste nested
 \usepackage{pgfplots} % Pour tracer des courbes
+\usepackage{float} % Pour placer correctement les tableaux
 
 
 \newcommand{\Author}{PONT Sébastien}
 \newcommand{\Date}{14 Mai 2020}
+
+\newcommand{\bigO}[1]{\ensuremath{\mathop{}\mathopen{}\mathcal{O}\mathopen{}\left(#1\right)}}
+   
+\newcommand\smallO[1]{
+   \mathchoice
+      {% mode \displaystyle
+         \ensuremath{\mathop{}\mathopen{}{\scriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+      }
+      {% mode \textstyle
+         \ensuremath{\mathop{}\mathopen{}{\scriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+      }
+      {% mode \scriptstyle
+         \ensuremath{\mathop{}\mathopen{}{\scriptscriptstyle\mathcal{O}}\mathopen{}\left(#1\right)}
+      }
+      {% mode \scriptscriptstyle
+         \ensuremath{\mathop{}\mathopen{}{o}\mathopen{}\left(#1\right)}
+      }
+}
 
 \title{
     \vspace{-1.5cm}
@@ -87,6 +106,6 @@
 \maketitle
 
 \input{exercice-01/main}
-\input{exercice-02/main}
+% \input{exercice-02/main}
 
 \end{document}

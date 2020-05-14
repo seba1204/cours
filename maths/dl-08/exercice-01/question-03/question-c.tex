@@ -1,1 +1,56 @@
-qc
+On reprend $\overrightarrow{f}(t)=
+  \left(
+  \begin{array}{c}
+      x(t) \\
+      y(t) \\
+    \end{array}
+  \right)
+$\\
+Faisons un DL de $f$ en $0$ :
+\[
+  \begin{array}{crcl}
+                          & \overrightarrow{f}(t)        & = &
+    \left(
+    \begin{array}{c}
+        -2cos(t)-cos(2t) \\
+        2sin(t)-sin(2t)  \\
+      \end{array}
+    \right)                                                    \\\\
+    \iff                  &
+    \overrightarrow{f}(t) & \underset{t\rightarrow 0}{=} &
+    \left(
+    \begin{array}{c}
+        -2\left[1-\frac{t^2}{2}\right]-\left[1-2t^2\right] + \smallO{t^3}            \\
+        2\left[t+\frac{t^3}{3!}\right]-\left[2t-\frac{4}{3}t^3\right] + \smallO{t^3} \\
+      \end{array}
+    \right)                                                    \\\\
+    \iff                  &
+    \overrightarrow{f}(t) & \underset{t\rightarrow 0}{=} &
+    \left(
+    \begin{array}{c}
+        -3 + 3t^2 + \smallO{t^3}      \\
+        \frac{3}{2}t^3 + \smallO{t^3} \\
+      \end{array}
+    \right)                                                    \\
+  \end{array}
+\]
+On en déduit que "$(p, q) = (2, 3)$", puisque la famille
+$\left(
+  \left(
+    \begin{array}{c}
+        3 \\
+        0 \\
+      \end{array}
+    \right),
+  \left(
+    \begin{array}{c}
+        0           \\
+        \frac{3}{2} \\
+      \end{array}
+    \right)
+  \right)
+$ n'est pas liée. Ainsi, par propriété :
+\begin{result}
+  $J$ est un point de \textbf{rebroussement de 1\textsuperscript{ère} espèce}.
+\end{result}
+\textcolor{Blue}{\textit{\ul{Remarque :} Je ne vois pas trop comment bien rédiger la fin de cette question : je ne sais pas comment introduire les variables "$p$" et "$q$"...}}
