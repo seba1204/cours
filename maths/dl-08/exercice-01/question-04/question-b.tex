@@ -1,29 +1,45 @@
-Pour $t\in\mathbb{R}$, posons :
+Pour $t\in\mathbb{R}$, on a :
 \[
-  f(t) =
+  \overrightarrow{f}(t) =
   \left(
   \begin{array}{c}
-      t                        \\
-      t^{2} - 2\sqrt{2}\beta t \\
+      -2cos(t)-cos(2t) \\
+      2sin(t)-sin(2t)  \\
     \end{array}
   \right)
-  \Rightarrow
-  f'(t) =
+  \text{et}
+  \overrightarrow{f}'(t) =
   \left(
   \begin{array}{c}
-      1                     \\
-      2(t - 2\sqrt{2}\beta) \\
+      2sin(t)+2sin(2t) \\
+      2cos(t)-2cos(2t) \\
     \end{array}
   \right)
 \]
-Définissons l'angle de relèvement $\alpha$ : \[\forall t\in\mathbb{R}, \alpha(t) = \arctan{(\frac{z'(t)}{y'(t)})}\]
-\[\iff\forall t\in\mathbb{R}, \alpha(t) = \arctan{(2(t-\sqrt{2}\beta))}\]
-Alors :
+Définissons l'angle de relèvement $\alpha$ :
+\[\forall t\in\mathbb{R}, \alpha(t) = \arctan{\left(\frac{y'(t)}{x'(t)}\right)}\]
+et :
 \[
   \forall t\in\mathbb{R},\gamma(t) = \frac{\alpha'(t)}{\left\|f'(t)\right\|}
 \]
-De plus, $\alpha$ est dérivable sur $\mathbb{R}$ :
-\[\forall t\in\mathbb{R}, \alpha'(t) = \frac{2}{1+4(t-\sqrt{2}\beta)^{2}}\]
-Donc :
-\[\forall t\in\mathbb{R}, \gamma(t) = \frac{2}{1+4(t-\sqrt{2}\beta)^{2}}\times \frac{1}{\sqrt{1+4(t-\sqrt{2}\beta)^{2}}}\]
-Ainsi, $\gamma$ est maximal pour $(1+4(t-\sqrt{2}\beta)^{2})^{3/2}$ minimal i.e. $t=\sqrt{2}\beta$
+avec :
+\[
+  R = \frac{1}{\gamma}
+\]
+\[
+  \alpha = arctan
+  \left(2
+  \frac{cos(t)-cos(2t)}{sin(t)+sin(2t)}
+  \right)
+\]
+\[
+  \iff
+  \alpha' = \text{heu ça donne une grosse formule !}
+\]
+Ainsi, pour $t = \frac{\pi}{3}$, $\alpha' = \frac{1}{2}$.\\
+De plus,
+$\left\|f'(t)\right\| = \sqrt{2^2+\left(2\sqrt{3}\right)^2} = 4$
+D'où
+\begin{result}
+  $R = 8$
+\end{result}
