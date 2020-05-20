@@ -1,1 +1,31 @@
-question b
+Soit $x \in D$. Calculons $\varphi(x + 1)$ :
+\[
+  \begin{array}{crcl}
+         & \varphi(x + 1) & = & \frac{1}{x+1} - \sum\limits_{n=1}^{+\infty} u_n(x+1)                                                                                \\\\
+    \iff & \varphi(x + 1) & = & \frac{1}{x+1} - \sum\limits_{n=1}^{+\infty} \left(\frac{1}{n-(x+1)}-\frac{1}{n+(x+1)}\right)                                        \\\\
+    \iff & \varphi(x + 1) & = & \frac{1}{x+1} - \sum\limits_{n=1}^{+\infty} \left(\frac{1}{n-1-x}\right) + \sum\limits_{n=1}^{+\infty} \left(\frac{1}{n+1+x}\right) \\\\
+    \iff & \varphi(x + 1) & = & \frac{1}{x+1}
+    -
+    \sum\limits_{n=0}^{+\infty} \left(\frac{1}{n-x}\right)
+    +
+    \sum\limits_{n=2}^{+\infty} \left(\frac{1}{n+x}\right)
+    \\\\
+    \iff & \varphi(x + 1) & = & \frac{1}{x+1}
+    -
+    \left(\sum\limits_{n=1}^{+\infty} \left(\frac{1}{n-x}\right) + \frac{1}{-x} \right)
+    +
+    \left(\sum\limits_{n=1}^{+\infty} \left(\frac{1}{n+x}\right) - \frac{1}{1+x} \right)
+    \\\\
+    \iff & \varphi(x + 1) & = & \frac{1}{x}
+    -
+    \sum\limits_{n=1}^{+\infty} \left(\frac{1}{n-x} - \frac{1}{n+x}\right)
+    \\\\
+    \iff & \varphi(x + 1) & = & \varphi(x)
+  \end{array}
+\]
+Ainsi :
+\begin{result}
+  $\varphi$ est $1$-préiodique.
+\end{result}
+
+\textcolor{Blue}{\textit{\ul{Remarque :} j'ai noté "1-préiodique" comme on note "$\pi$-périodique".}}
