@@ -3,16 +3,16 @@ $D = \mathbb{R} - \mathbb{Z}$ Pour $x \in D$, on a :
   \varphi(x) = \frac{1}{x} - \sum_{n=1}^{+\infty} \frac{2x}{n^2-x^2} =  \frac{1}{x} - \sum_{n=1}^{+\infty} u_n(x)
 \]
 Soit $x$ un réel.\\
-Pour que $\varphi(x)$ existe, $x$ doit respecter les conditions :
-$
-  \left\{
-  \begin{array}{rcl}
-    x & \neq & 0                    \\
-    x & \neq & \pm n \in \mathbb{N}
-  \end{array}
-  \right.
-$.\\Autrement dit $x\neq a \in \mathbb{Z} \iff x \in D$
-Soit $x \in D$
+Pour que $\varphi(x)$ soit définie sur $D$, il faut que $\forall x \in D$, $\varphi(x)$ converge. Décomposons $\varphi(x)$ en deux : \\
+\[
+  \varphi(-x) = \underbrace{\frac{1}{-x}}_{A(x)} - \underbrace{\sum\limits_{n=1}^{+\infty} \frac{2(-x)}{n^2-x^2}}_{B(x)}
+\]
+\begin{dinglist}{111}
+  \item $A(x)$ existe pour $x\neq 0$.\\
+  \item $B(x) $ 
+
+\\Autrement dit $x\neq a \in \mathbb{Z} \iff x \in D$
+\\De plus, pour $x \in D$ :
 \[
   \begin{array}{crcl}
          & \varphi(-x) & = & \frac{1}{-x} - \sum\limits_{n=1}^{+\infty} \frac{2(-x)}{n^2-x^2}           \\\\
