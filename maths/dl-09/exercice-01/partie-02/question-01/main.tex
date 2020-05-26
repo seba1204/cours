@@ -3,12 +3,12 @@ Bon comme je ne me suis pas bouché les oreilles, je sais qu'il faut faire atten
 Soit $f\in E \iff f\in\mathcal{C}([0, 1])$
 \begin{dinglist}{111}
   \item Montrons que $T$ est une application linéaire.\\
-  Soit $(f, i) \in E$ et $\lambda \in \mathbb{R}$.
+  Soit $(f, i) \in E^2$ et $(\lambda, \mu) \in \mathbb{R}^2$.
   \[
     \begin{array}{rcl}
-      T(f+\lambda i)(x) & = & (f+\lambda i)\left(\frac{x}{2}\right) + (f+\lambda i)\left(\frac{x+1}{2}\right)                                                   \\\\
-                        & = & f \left(\frac{x}{2}\right) + \lambda i \left(\frac{x}{2}\right) + f\left(\frac{x+1}{2}\right)+\lambda i\left(\frac{x+1}{2}\right) \\\\
-                        & = & T(f)(x) + \lambda T(i)(x)
+      T(\mu f+\lambda i)(x) & = & (\mu f+\lambda i)\left(\frac{x}{2}\right) + (\mu f+\lambda i)\left(\frac{x+1}{2}\right)                                                   \\\\
+                            & = & \mu f \left(\frac{x}{2}\right) + \lambda i \left(\frac{x}{2}\right) + \mu f\left(\frac{x+1}{2}\right)+\lambda i\left(\frac{x+1}{2}\right) \\\\
+                            & = & \mu T(f)(x) + \lambda T(i)(x)
     \end{array}
   \]
   Donc $T$ est linéaire.
@@ -29,5 +29,11 @@ Soit $f\in E \iff f\in\mathcal{C}([0, 1])$
                & \Rightarrow & T(f)(x) = \sum\limits_{k=0}^{n}\beta_k \left(x^k + (x+1)^k\right)  \\ \\
     \end{array}
   \]
+  On retrouve une combinaison linéaire des $e_k$. Donc $T(f) = \sum\limits_{k=0}^{n}\alpha_k' e_k$.
 \end{dinglist}
+
+Ainsi
+\begin{result}
+  $T$ est un endomorphisme de $E$ et $F_n$ est stable par $T$.
+\end{result}
 
