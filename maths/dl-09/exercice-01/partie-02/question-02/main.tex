@@ -31,4 +31,11 @@ Donc :
       0       & \dots   & \dots   & \dots   & 0       & 2^{1-n} &  e_n    \\
     \end{block}
   \end{blockarray}
-\] On remarque donc que $A$ est triangulaire supérieure, et donc, par propriété elle est diagonalisable.
+\] On remarque donc que $A$ est triangulaire supérieure, et donc, par propriété son déterminant est le produit des coefficients de la diagnoale. On en déduit son polynôme caractéristique :
+\[
+  \chi(x) = \prod_{k=0}^{n} \left(x-\frac{1}{2^{k-1}}\right)
+\]
+$\chi$ est donc scindé à racines simples dans $\mathbb{R}$, par théorème, A est diagonalisable, d'où :
+\begin{result}
+  $T_n$ est diagonalisable.
+\end{result}

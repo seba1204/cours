@@ -1,1 +1,29 @@
-question d
+Pour $n \in \mathbb{N}$ on définit "$P(n) : f\left(\frac{x_0}{2^n}\right)=m$".
+\begin{dinglist}{111}
+  \item \ul{Initialisation :} pour $n=0$\\
+  $f(x_0)=m$ : OK d'après la question 3.(b)
+  \item \ul{Heredite :}
+  pour $n\in\mathbb{N}$ fixé, supposons $P(n)$ vraie, montrons que $P(n+1)$ l'est aussi.
+  On a, d'après le raisonnement précédent :
+  \[
+    f\left(\frac{x_0}{2^n}\right)=m \Rightarrow f\left(\frac{x_0}{2^{n+1}}\right)=m
+  \]
+  D'où $P(n+1)$ vraie.
+  \item \ul{Conclusion :}
+  On a montré l'initialisation et l'hérédité de $P$. Par le principe de démonstration par récurrence, on a montré :
+  \begin{result}
+    $\forall n \in\mathbb{N}, f\left(\frac{x_0}{2^{n}}\right) = m$
+  \end{result}
+\end{dinglist}
+
+De plus :
+\[
+  \begin{array}{rl}
+                & \underset{n\rightarrow+\infty}{lim} f\left(\frac{x_0}{2^{n}}\right) = m \\\\
+    \Rightarrow & f\left(0\right) = m                                                     \\
+  \end{array}
+\]
+Donc
+\begin{result}
+  $f\left(0\right) = m  $
+\end{result}
