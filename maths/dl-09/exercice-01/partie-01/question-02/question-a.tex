@@ -1,12 +1,14 @@
-Soit $x \in [0, 1]\\$
-  Soit $h \in \left]-\frac{1}{2}, \frac{1}{2}\right[$
-\[
-  \begin{array}{crcl}
-                & g(x)          & = & \sum\limits_{n=2}^{+\infty}{\frac{2x}{n^2-x^2}} \\\\
-    \Rightarrow & g(x+h) - g(x) & = & 2\sum\limits_{n=2}^{+\infty}{\left(
-    \frac{x+h}{n^2-(x+h)^2}
-    -
-    \frac{x}{n^2-x^2}
-    \right)}                                                                          \\\\
-  \end{array}
-\]
+Je n'avais pas réussi cette question. J'ai compris avec le corrigé, mais franchement je ne pense pas que j'aurai trouvé sans y passer beaucoup de temps... Concrètement en DS/concours j'aurai sauté la question !
+
+Par contre dans le corrigé il n'y aurait pas une erreur ? à la ligne :
+\begin{quote}
+  Mais on a $x+h\in \left[-\frac{1}{2}, \frac{3}{2}\right]$ donc
+  $
+    \left\{
+    \begin{array}{c}
+      x+h \leq \frac{3}{2} \Rightarrow n-(x+h) \geq n-\frac{3}{2} \\\\
+      x+h $ \textcolor{Red}{\textit{$\leq$}}$ -\frac{1}{2} \Rightarrow n+(x+h) \geq n-\frac{1}{2}
+    \end{array}
+    \right.
+  $
+\end{quote}
