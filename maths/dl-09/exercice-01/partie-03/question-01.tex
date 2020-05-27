@@ -1,12 +1,27 @@
 $cotan(x) = \frac{cos(x)}{sin(x)}$\\
-Soit $x\in\mathbb{R}$
-\[
-  \begin{array}{rl}
-                & cotan(x)=y                         \\
-    \Rightarrow & \frac{cos(x)}{sin(x)} = y          \\
-    \Rightarrow & x = arctan\left(\frac{1}{y}\right) \\
-  \end{array}
-\]
+Soit $x\in\mathbb{R}$.\\
+D'après le théorème de la bijection écrit dans mon cours de PTSI :
+\\Si :
+\begin{itemize}
+  \item $f$ est strictement monotone sur $I$
+  \item $f$ et continue sur $I$
+\end{itemize}
+Alors :
+\begin{itemize}
+  \item $f$ réalise une bijection de $I$ sur $f(I)$
+  \item $f$  et $f^{-1}$ ont la même monotonie
+  \item $f^{-1}$ est continue
+\end{itemize}
+
+\begin{dinglist}{111}
+  \item \ul{Continuit$\acute{e}$ :}
+  $cotan$ est continue sur $]0, \pi[$ car $sin$ s'annule en $0$ et $\pi$.
+        \item \ul{Monotonie :} Calculons la dérivée.\\
+      $cotan$ est donc dérivable sur $]0, \pi[$ et : \\
+      $\forall x \in ]0, \pi[, cotan'(x) = \frac{-sin^2(x)-cos^2(x)}{sin^2(x)}=-\frac{1}{sin^2(x)}$
+        Ainsi, $cotan$ est strictement décroissante sur $]0, \pi[$.
+\end{dinglist}
+Par théorème :
 \begin{result}
-  $I = ]0, \pi[$
+  $f$ réalise une bijection de $I = ]0, \pi[$ sur $f(I) = \mathbb{R}$
 \end{result}
