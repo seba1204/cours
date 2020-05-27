@@ -1,1 +1,39 @@
-question c
+\[
+  (\mathcal{R}_0') : \forall x \in \mathbb{C} - \mathbb{Z}, \pi cotan(\pi x) = \frac{1}{x} - \sum\limits_{n=1}^{+\infty}\frac{2x}{n^2-x^2}
+\]
+Passons sous forme exponentielle
+\[
+  \begin{array}{rrcl}
+                & cotan(x) & = & \frac{cos(x)}{sin(x)}                  \\\\
+    \Rightarrow & cotan(x) & = & i\frac{e^{ix}+e^{-ix}}{e^{ix}-e^{-ix}} \\\\
+    \Rightarrow & cotan(x) & = & -i\frac{cosh(x)}{sinh(x)}              \\\\
+  \end{array}
+\]
+Donc, pour $y\in\mathbb{R}^*$
+\[
+  \begin{array}{rrcl}
+                & -\pi \frac{cosh(\pi y)}{sinh(\pi x) }        & = & \frac{1}{x} - \sum\limits_{n=1}^{+\infty}\frac{2x}{n^2-x^2}                \\\\
+    \Rightarrow & \sum\limits_{n=1}^{+\infty}\frac{1}{n^2-x^2} & = & \frac{1}{2x}\left(\frac{1}{x} + \pi \frac{cosh(\pi x)}{sinh(\pi x)}\right) \\\\
+    \Rightarrow & \sum\limits_{n=1}^{+\infty}\frac{1}{n^2-x^2} & = & \frac{1}{2x^2}\left(1 + \pi x \frac{cosh(\pi x)}{sinh(\pi x)}\right)       \\\\
+    \Rightarrow & \sum\limits_{n=1}^{+\infty}\frac{1}{n^2-x^2} & = & \frac{1}{2x^2}\left(1 + \pi x \frac{cosh(\pi x)}{sinh(\pi x)}\right)       \\\\
+  \end{array}
+\]
+\[
+  \Rightarrow\left\{
+  \begin{array}{rcl}
+    x                                            & = & iy                                                                    \\
+    \sum\limits_{n=1}^{+\infty}\frac{1}{n^2+y^2} & = & -\frac{1}{2y^2}\left(1 + \pi \frac{cosh(\pi iy)}{sinh(\pi iy)}\right) \\
+  \end{array}
+  \right.
+\]
+
+\[
+  \begin{array}{crcl}
+    \Rightarrow & \sum\limits_{n=1}^{+\infty}\frac{1}{n^2+y^2} & = & \frac{1}{2y^2}\left(-\pi \frac{cosh(\pi iy)}{sinh(\pi iy)}-1\right) \\\\
+    \Rightarrow & \sum\limits_{n=1}^{+\infty}\frac{1}{n^2+y^2} & = & \frac{1}{2y^2}\left(\pi \frac{cosh(\pi y)}{sinh(\pi y)}-1\right)    \\
+  \end{array}
+\]
+D'où
+\begin{result}
+  $\sum\limits_{n=1}^{+\infty}\frac{1}{n^2+y^2} = \frac{1}{2y^2}\left(\pi \frac{cosh(\pi y)}{sinh(\pi y)}-1\right)$
+\end{result}
