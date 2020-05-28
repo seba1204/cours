@@ -1,1 +1,28 @@
-question 2
+Soit $(x, t, N)\in \mathbb{R}\times]0, +\infty[\times\mathbb{N}$.\\
+On a :
+\[
+  \begin{array}{rrlc}
+                & h(x, t) & = & \frac{sin(xt)}{e^t-1}                \\\\
+    \Rightarrow & h(x, t) & = & e^{-t}sin(xt)\frac{1}{e^{-t}(e^t-1)} \\\\
+    \Rightarrow & h(x, t) & = & e^{-t}sin(xt)\frac{1}{1-e^{-t}}      \\\\
+  \end{array}
+\]
+De plus, $\forall q\in \mathbb{R}, |q|<1 :$
+\[
+  \begin{array}{rrlc}
+                & \sum\limits_{k=0}^{N}q^k & = & \frac{1-q^{N+1}}{1-q}                          \\\\
+    \Rightarrow & \sum\limits_{k=0}^{N}q^k & = & \frac{1}{1-q} - \frac{q^{N+1}}{1-q}            \\\\
+    \Rightarrow & \frac{1}{1-q}            & = & \sum\limits_{k=0}^{N}q^k + \frac{q^{N+1}}{1-q} \\\\
+  \end{array}
+\]
+Or, $\forall t>0, |e^{-t}| < 1$, la relation précédente est donc valable pour $q = e^{-t}$.\\
+D'où :
+\[
+  \begin{array}{rrlc}
+     & h(x, t) & = & e^{-t}sin(xt)\left(\sum\limits_{k=0}^{N}e^{-tk} + \frac{e^{-t(N+1)}}{1-e^{-t}}\right) \\\\
+  \end{array}
+\]
+Ainsi :
+\begin{result}
+  $\Gamma(x) = \int_{0}^{+\infty} {e^{-t}sin(xt)\left(\sum\limits_{k=0}^{N}e^{-tk} + \frac{e^{-t(N+1)}}{1-e^{-t}}\right)dt}$
+\end{result}
