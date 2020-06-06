@@ -1,0 +1,7 @@
+A = ConvertDataFromCSV('ressources/essai_1.csv')
+plt.xlabel("Allongement relatif $\epsilon$")
+plt.ylabel("Contrainte $\sigma$ (Mpa)")
+plt.title("Essais de traction")
+plt.plot(A[2], A[1], label=A[0])
+plt.legend(loc='center left')
+plt.show()
