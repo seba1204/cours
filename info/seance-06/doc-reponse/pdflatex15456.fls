@@ -1,0 +1,5 @@
+PWD c:/Users/Chap/Repos/Cours/info/seance-06/doc-reponse
+INPUT c:/texlive/2020/texmf.cnf
+INPUT c:/texlive/2020/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT c:/Users/Chap/Repos/Cours/info/seance-06/doc-reponse/main.tex
