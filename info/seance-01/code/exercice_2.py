@@ -44,9 +44,9 @@ def printResult(n, toursMax):
         'Le programme fait {} tours (max : {} tours).'.format(i, toursMax) +
         '\n' +
         bcolors.OKBLUE +
-        'Temps d\'exécution : {}{:.3f}s{}\n'.format(bcolors.ENDC, t, bcolors.OKBLUE) +
-        'Nombre de résultats : {}{}\n{}'.format(bcolors.ENDC, len(result), bcolors.OKBLUE) +
-        'Résultats :' + bcolors.ENDC + str(result[:4] + ['...'] + result[-2:])
+        'Temps d\'execution : {}{:.3f}s{}\n'.format(bcolors.ENDC, t, bcolors.OKBLUE) +
+        'Nombre de resultats : {}{}\n{}'.format(bcolors.ENDC, len(result), bcolors.OKBLUE) +
+        'Resultats :' + bcolors.ENDC + str(result[:4] + ['...'] + result[-2:])
     )
 
 
