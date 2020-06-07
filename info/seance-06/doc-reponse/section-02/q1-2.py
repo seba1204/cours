@@ -1,4 +1,8 @@
 def openCSV(path):
+
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, path)
+
     f = open(path, 'r')
     X = []
     Y = []
