@@ -1,96 +1,25 @@
-\documentclass[a4paper]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[french]{babel}
+\documentclass{sebaClass}
 
-\usepackage{listings}
-\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-\usepackage{xcolor}
-\usepackage[explicit]{titlesec}
-\usepackage{tcolorbox}
+\title{Séance 19}
+\author{PONT Sébastien}
+\date{28 Mai 2020}
+\newcommand{\SubTitle}{Dérivée $n^{i\grave{e}me}$ : méthode de Simpson}
+\newcommand{\Subject}{Informatique}
+\newcommand{\Place}{Lycée Antoine Bourdelle}
 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathrsfs}
-\usepackage{stmaryrd}
-
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-
-
-\newcommand{\Author}{PONT Sébastien}
-\newcommand{\Date}{26 Avril 2020}
-
-
-\title{Séance 19 - Dérivée $n^{i\grave{e}me}$ - Méthode de Simpson}
-\date{}
-\author{}
-
-\newtcolorbox{result}{
-    before=\par\smallskip\centering,
-    after=\par,
-    hbox,
-    colframe=Green,
-    colback=green!5,
-    }
-
-\titleformat{\section}
-  {\normalfont\Large\bfseries\color{Red}}
-  {\thesection}
-  {1em}
-  {#1}
-  [{\titlerule[0.8pt]}]
-
-%New colors defined below
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-\definecolor{Red}{RGB}{231, 76, 60}
-\definecolor{Green}{RGB}{46, 204, 113}
-
-%Code listing style named "codeStyle"
-\lstdefinestyle{codeStyle}{
-  backgroundcolor=\color{backcolour},
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,         
-  breaklines=true,                 
-  captionpos=b,                    
-  keepspaces=true,                 
-  numbers=left,                    
-  numbersep=5pt,                  
-  showspaces=false,                
-  showstringspaces=false,
-  showtabs=false,                  
-  tabsize=2
-}
-
-\lstset{style=codeStyle}
-
-\pagestyle{fancy}
-
-
-\renewcommand\headrulewidth{1pt}
-\fancyhead[L]{Informatique - Séance 19}
-\fancyhead[R]{\Date}
-
-\renewcommand\footrulewidth{1pt}
-\fancyfoot[L]{\Author}
-\fancyfoot[R]{Lycée Antoine Bourdelle}
-\fancyfoot[C]{\thepage/\pageref{LastPage}}
-
-\fancypagestyle{plain}{}
+\newcommand{\q}[1]{\textbf{\textit{#1}}}
+\newcommand{\il}[1]{\inlineCode{#1}}
 
 \begin{document}
 
+
 \maketitle
 
-\input{question_1}
-\input{question_2}
+\input{section-01/main}
+\input{section-02/main}
+\input{section-03/main}
+\input{section-04/main}
+\input{section-05/main}
+
 
 \end{document}

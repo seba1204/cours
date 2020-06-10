@@ -1,0 +1,18 @@
+\section{Valeur approchée}
+\q{Sachant que les alculs en Python se font à $10^{-16}$ près, prouver que pour
+  calculer $I$ à $10^{-12}$ près, il suffit de calculer à $10^{-12}$ près :}
+\[
+  J = \int_{0}^{6}exp(-x^2)sin(x^3)dx
+\]
+
+Calculons $|I-J|$ :
+\[
+  \begin{array}{rrcl}
+                & I-J   & =    & \int_{6}^{+\infty}exp(-x^2)sin(x^3)dx      \\\\
+    \Rightarrow & |I-J| & \leq & \int_{6}^{+\infty}exp(-x^2)|sin(x^3)|dx    \\\\
+    \Rightarrow & |I-J| & \leq & \int_{6}^{+\infty}exp(-x^2)\frac{2x}{12}dx \\\\
+    \Rightarrow & |I-J| & \leq & \frac{e^{-36}}{12}                         \\\\
+    \Rightarrow & |I-J| & \leq & 2.10^{-17}                                 \\\\
+  \end{array}
+\]
+Ainsi, à $10^{-12}$ près, $I$ et $J$ sont égaux.
