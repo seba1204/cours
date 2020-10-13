@@ -4,23 +4,60 @@ Repository of my programs made in class.
 
 ## Prepa
 
-|------------|-------------------------|
-| Class      | PT                      |
-| Year       | 2019-2020               |
 | Highschool | Lycée Antoine Bourdelle |
+|-------|-----------|
 | City       | Montauban               |
 | Country    | France                  |
 
-### 2018-2019 (S1-S2)
+### ⌚ 2018-2019 (S1-S2)
 
 List of subjects:
 
-- fg
-- dfg
-- jk
+### ⌚ 2019-2020 (S3-S4)
 
-### 2019-2020 (S3-S4)
+List of subjects:
+
+| Subject name | Folder name |
+|-------|-----------|
+| Mathématiques |  ```maths``` |
+| Physique Chimie | ```pc``` |
+| Sciences Industrielles de l'Ingénieur | ```sii``` |
+| Informatique | ```info``` |
+| TIPE | ```tipe``` |
+
+Description of subjects:
+
+#### 📓 Mathématiques
+
+[Overview]
+
+#### 📓 Physique Chimie
+
+[Overview]
+
+#### 📓 Sciences Industrielles de l'Ingénieur
+
+[Overview]
+
+#### 📓 Informatique
+
+[Overview]
+
+#### 📓 TIPE
+
+[Overview]
 
 ## ENSEEIHT
 
-### S5 (2020)
+| School | [ENSEEIHT]([www.enseeiht.fr](https://www.enseeiht.fr/)) |
+|-------|-----------|
+| City       | Toulouse               |
+| Country    | France                  |
+
+### ⌚ 2020 (S5)
+
+List of subjects:
+
+- Environnement informatique
+- PIM
+- Modélisation
