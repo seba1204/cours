@@ -71,8 +71,8 @@ List of subjects:
 
 | School | [ENSEEIHT]([www.enseeiht.fr](https://www.enseeiht.fr/)) |
 |-------|-----------|
-| City       | Toulouse               |
-| Country    | France                  |
+| City| Toulouse|
+| Country| France|
 
 ### ⌚ 2020 (S5)
 
@@ -80,6 +80,6 @@ List of subjects:
 
 | Subject name | Folder name |
 |-------|-----------|
-| [Environnement Informatique](https://github.com/seba1204/cours#-math%C3%A9matiques) |  ```env``` |
-| [PIM](https://github.com/seba1204/cours#-physique-chimie) | ```pim``` |
-| [Modélisation](https://github.com/seba1204/cours#-sciences-industrielles-de-lingénieur) | ```modelisation``` |
+| [Environnement Informatique](https://github.com/seba1204/cours#-environnement-informatique) |  ```env``` |
+| [PIM](https://github.com/seba1204/cours#-pim) | ```pim``` |
+| [Modélisation](https://github.com/seba1204/cours#-modélisation) | ```modelisation``` |
