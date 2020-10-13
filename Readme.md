@@ -19,11 +19,11 @@ List of subjects:
 
 | Subject name | Folder name |
 |-------|-----------|
-| Mathématiques |  ```maths``` |
-| Physique Chimie | ```pc``` |
-| Sciences Industrielles de l'Ingénieur | ```sii``` |
-| Informatique | ```info``` |
-| TIPE | ```tipe``` |
+| [Mathématiques](https://github.com/seba1204/cours#-math%C3%A9matiques) |  ```maths``` |
+| [Physique Chimie](https://github.com/seba1204/cours#-physique-chimie) | ```pc``` |
+| [Sciences Industrielles de l'Ingénieur](https://github.com/seba1204/cours#-sciences-industrielles-de-lingénieur) | ```sii``` |
+| [Informatique](https://github.com/seba1204/cours#-informatique) | ```info``` |
+| [TIPE](https://github.com/seba1204/cours#-tipe) | ```tipe``` |
 
 Description of subjects:
 
