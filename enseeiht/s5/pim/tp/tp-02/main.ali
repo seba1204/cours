@@ -1,0 +1,83 @@
+V "GNAT Lib v2020"
+M P W=b
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_FLOATING_POINT
+RV NO_IO
+
+U jeu_devin%b		main.adb		7945480c NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z system.fat_flt%s	s-fatflt.ads		s-fatflt.ali
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-except.ads		20200819050644 a7106115 ada.exceptions%s
+D a-inteio.ads		20200819050644 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050644 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
+D main.adb		20201002175000 21fa14c5 jeu_devin%b
+D system.ads		20200819050648 32a08138 system%s
+D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-fatflt.ads		20200819050646 11beb392 system.fat_flt%s
+D s-fatgen.ads		20200819050646 49cbaf86 system.fat_gen%s
+D s-ficobl.ads		20200819050646 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050648 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050648 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050648 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050648 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050648 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [jeu_devin standard 9 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 12|5r6 5r32 6r6 6r32
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 12|6w10 6r36
+X 7 a-textio.ads
+57K13*Text_IO 727e16 12|5w10 5r36
+264U14*New_Line 12|163s7
+273U14*Skip_Line 12|95s13 119s17
+381U14*Get 12|94s13 118s17
+465U14*Put 12|25s13 38s13 54s9 56s9 89s13 91s13 93s13 107s13 114s21 116s21
+. 140s13 141s13 143s13 145s13 147s13 161s7
+508U14*Put_Line 12|31s25 43s25 45s25 53s17 87s17 109s13 156s7 157s7 158s7
+X 8 a-tiinio.ads
+59U14*Get 12|26s21[3|18] 39s13[3|18] 162s7[3|18]
+80U14*Put 12|55s9[3|18] 90s13[3|18] 92s13[3|18] 108s13[3|18] 144s13[3|18]
+. 146s13[3|18]
+X 12 main.adb
+9U11*Jeu_Devin 9b11 176l5 176t14
+11i9 Mini{integer}
+12i9 Maxi{integer}
+15U19 User_Guess 15b19 57l13 57t23 168s20
+16i9 Secret_Number{integer} 26m25 28r29 28r47 42r38 44r41
+17i17 User_Number{integer} 39m17 42r24 44r27
+18i17 Count{integer} 40m13 40r22 55r14
+19b17 Is_Number_Valid{boolean} 29m25 33r27
+20b17 Is_Number_Right{boolean} 47m16 49r27
+62U19 Computer_Guess 62b19 149l13 149t27 169s20
+63e9 Clue{character} 118m21 121r23 121r37 121r51 130r16 132r19 135r19
+64e9 Choice{character} 94m17 99r19
+65i9 Max_Number{integer} 76m9 80r16 92r17
+66i9 Min_Number{integer} 77m9 81r16 90r17
+67i9 Counti{integer} 78m9 104m13 104r22 146r17
+68i9 Maxi{integer} 80m9 106r66 125r52 133m17
+69i9 Mini{integer} 81m9 106r73 125r20 131m17
+70b9 Is_Cheated{boolean} 126m17 135r33 139r12
+71i9 Guess_Number{integer} 106m13 108r17 125r27 125r59 131r24 133r24 144r17
+73i9 i{integer} 84m9 86r16 97m13 97r17 111m13 113r20 120m17 120r21
+152i9 Main_Choice{integer} 162m11 167r12 174r14
+

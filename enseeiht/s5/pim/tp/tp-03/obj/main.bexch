@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\Chap\Repos\cours\PIM\TP 3\tp3.gpr
+20201003094316 a8e07bdc3ffc36485739f48091af1bae
+[BOUND OBJECT FILES]
+C:\Users\Chap\Repos\cours\PIM\TP 3\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\Chap\Repos\cours\PIM\TP 3\obj\
+-LC:\Users\Chap\Repos\cours\PIM\TP 3\obj\
+-LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

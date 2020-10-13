@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__drone.o
+[PROJECT FILES]
+C:\Users\Chap\Repos\cours\PIM\TD1\drone.gpr
+20200916034902 249a1c4bccc6eaccb4ab5f4967ff1f04
+[BOUND OBJECT FILES]
+C:\Users\Chap\Repos\cours\PIM\TD1\obj\drone.o
+[GENERATED SOURCE FILES]
+b__drone.ads
+b__drone.adb
+b__drone.ali
+[RESULTING OPTIONS]
+-LC:\Users\Chap\Repos\cours\PIM\TD1\obj\
+-LC:\Users\Chap\Repos\cours\PIM\TD1\obj\
+-LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
