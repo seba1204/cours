@@ -15,8 +15,10 @@ begin
     Afficher (Une_Date);
     New_Line;
 
-    -- Afficher un enter sur 2 positions
-    Afficher_Deux_Positions (2);
+   -- Afficher un enter sur 2 positions
+
+    -- Erreur car la fonctino n'est pas accessible depuis l'extétieure du module
+    -- Afficher_Deux_Positions (2);
     New_Line;
 
     -- Afficher le mois suivant de Une_Date
@@ -26,9 +28,11 @@ begin
     New_Line;
     -- OK car le type T_Mois est accessible de l'utilisateur.
 
-    -- Modifier directement la date
-    Une_Date.jour := 15;
-    Une_Date.Mois := Mois_Suivant;
+   -- Modifier directement la date
+
+    -- Erreur car le type T_Date est privé donc pas d'affectation
+    -- Une_Date.jour := 15;
+    -- Une_Date.Mois := Mois_Suivant;
     Afficher (Une_Date);
     New_Line;
 

@@ -1,13 +1,6 @@
-project TP5 is
+project TP07 is
 
-   for Main use ("exemple_1.adb",
-	"exemple_2.adb",
-	"exemple_3.adb",
-	"exemple_4.adb",
-	"exemple_5.adb",
-	"somme.adb",
-	"saisir_pile_robuste.adb",
-	"test_piles.adb");
+   for Main use ("exemple_integer_io.adb", "parenthesage.adb", "test_piles.adb", "utiliser_piles.adb");
 
    package Builder is
       for Default_Switches ("ada") use ("-s");
@@ -21,5 +14,5 @@ project TP5 is
       for Default_Switches ("ada") use ("-E");
    end Binder;
 
-end TP5;
+end TP07;
 

@@ -1,4 +1,4 @@
-project TP4 is
+project TP06 is
 
    for Main use ("exemple_dates.adb", "exemple_dates_erreurs.adb", "scenario_stock.adb");
 
@@ -14,5 +14,5 @@ project TP4 is
       for Default_Switches ("ada") use ("-E");
    end Binder;
 
-end TP4;
+end TP06;
 
