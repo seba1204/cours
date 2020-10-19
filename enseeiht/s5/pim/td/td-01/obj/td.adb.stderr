@@ -1,4 +1,0 @@
-td.adb:4:05: missing "with Ada.Strings;"
-td.adb:4:28: missing "with Ada.Strings;"
-td.adb:7:11: warning: file name does not match unit name, should be "drone.adb"
-td.adb:17:46: "Unbounded_String" is undefined
