@@ -1,6 +1,11 @@
-(*Modélisation TP 01*)
-(*Groupe L3*)
-(*PONT Sébastien ; Chaimae Ouardani ; Salahdine OUHMMIALI*)
+(*
+Modélisation - TP 02
+Date   : 29 Septembre 2020
+Groupe : L1
+Eleves : Chaimae OUARDANI
+         Salahdine OUHMMIALI
+         Sebastien PONT
+*)
 
 Require Import Naturelle.
 Section CalculPropositionnel.

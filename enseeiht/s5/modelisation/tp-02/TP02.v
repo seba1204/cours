@@ -1,9 +1,12 @@
-(*Groupe L1
-Chaimae OUARDANI
-Edgar REMY
-Hamid OUKHNINI
-Maxence PERICAT
-Sebastien PONT
+(*
+Modélisation - TP 02
+Date   : 06 Octobre 2020
+Groupe : L1
+Eleves : Chaimae OUARDANI
+         Edgar REMY
+         Hamid OUKHNINI
+         Maxence PERICAT
+         Sebastien PONT
 *)
 
 Section CalculPredicats.
