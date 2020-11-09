@@ -7,17 +7,23 @@ L = taille_ecran(3);
 H = taille_ecran(4);
 
 % Lecture d'une image interne a Matlab et conversion en doubles :
-I_max = 255;
-I_min = 0;
 I = rgb2gray(imread('autumn.tif'));
 I = double(I);
+% colonne, ligne
+[m,n] = size(I);
+I_decorrelee = I(1:m-1,1:n) - I(2:m,1:n);
+
+I_max = 255;
+I_min = min(min(I_decorrelee));
 
 % Affichage de l'image :
 figure('Name','Exemple d''image interne a Matlab','Position',[0,0,0.33*L,0.3*L]);
-imagesc(I);
+imagesc(I_decorrelee);
 axis off;
 axis equal;
 colormap gray;
+
+
 
 % Affichage de l'histogramme de l'image :
 histogramme = hist(I(:),[I_min:I_max]);

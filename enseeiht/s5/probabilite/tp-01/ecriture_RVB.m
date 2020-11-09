@@ -1,3 +1,5 @@
+% Sébastien PONT
+
 function image_RVB = ecriture_RVB(image_originale)
     [m,n] = size(image_originale);
     image_RVB(:,:,1) = image_originale(2:2:m,1:2:n);
