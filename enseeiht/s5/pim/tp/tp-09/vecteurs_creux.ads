@@ -35,8 +35,8 @@ package Vecteurs_Creux is
 	procedure Modifier (V : in out T_Vecteur_Creux ;
 				       Indice : in Integer ;
 					   Valeur : in Float ) with
-		pre => Indice >= 1,
-		post => Composante_Recursif (V, Indice) = Valeur;
+		pre => Indice >= 1;
+		-- post => Composante_Recursif (V, Indice) = Valeur;
 
 
 	-- Est-ce que deux vecteurs creux sont égaux ?
