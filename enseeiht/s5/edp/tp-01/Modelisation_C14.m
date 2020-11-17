@@ -227,12 +227,6 @@ function res = residu_C14(beta, donnees)
 % res    : vecteur des résidus
 %          real(n)
 %
-    % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % sizeDonnes = size(donnees);
-    % res = zeros(sizeDonnes);
-    % for i =1:sizeDonnes
-    %     res(i) = donnees(2, i) - beta(1) * exp(-beta(2) * donnees(1, i));
-    % end 
     res = donnees(:,2) - beta(1) * exp(-beta(2) * donnees(:,1));
 
 end
@@ -255,14 +249,7 @@ function J_res = J_residu_C14(beta, donnees)
 % --------------------
 % J_res    : Matrice jacobienne des résidus
 %            real(n,p)
-%
-    % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % sizeDonnes = size(donnees);
-    % J_res = zeros(sizeDonnes);
-    % for i =1:sizeDonnes
-    %   J_res(i) = beta(1) * beta(2) * exp(-beta(2) * donnees(1, i));
-    % end
-    
+%    
     J_res(:,1) = - exp(-beta(2) * donnees(:,1));
     J_res(:,2) = donnees(:,1) * beta(1) .* exp(-beta(2) * donnees(:,1));
     
@@ -296,11 +283,19 @@ function [H_f, res, J_res] = Hess_f_C14(beta, donnees, residu, J_residu)
 %            real(n)
 % J_res    : Matrice jacobienne des résiduis
 %            real(n,p)
-%
-    % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    res = 0;
-    J_res = 0;
-    H_f = 0;
+    
+    
+    J_res = J_residu(beta, donnees);
+    res = residu(beta, donnees);
+    
+    J_res(:,1) = - exp(-beta(2) * donnees(:,1));
+    J_res(:,2) = donnees(:,1) * beta(1) .* exp(-beta(2) * donnees(:,1));
+    
+    H_f = (:,1) = 0;
+    H_f = (:,2) = donnees(:,1  .* exp(-beta(2) * donnees(:,1)));
+    H_f = (:,3) = H_f = (:,2);
+    H_f = (:,4) = 0;
+    
 
 end
 

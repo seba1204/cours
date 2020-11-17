@@ -1,0 +1,4 @@
+module addbin (a, b, cin : s, cout) 
+    // ‘:’ séparent les entrées des sorties (‘,’ aussi)
+    // équations logiques de s et de cout
+end module

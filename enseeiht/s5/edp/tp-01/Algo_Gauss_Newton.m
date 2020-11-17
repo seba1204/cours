@@ -50,18 +50,51 @@ function [beta, norm_grad_f_beta, f_beta, norm_delta, nb_it, exitflag] ...
 
 % TO DO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-    beta = beta0;
-    norm_grad_f_beta = 0;
-    f_beta = 0;
-    norm_delta = 0;
+    norm_grad_f_beta_0 = norm(J_residu(beta0));
+    beta_k = beta0;
+    f_beta_k = 0;
     nb_it = 0;
-    exitflag = 0;
     
-    while nb_it < option(3)
-        A = J_residu(beta)' * J_residu(beta);
-        B = A * beta - J_residu(beta)' * residu(beta);
-        beta = A\B;
-        nb_it = nb_it + 1;        
+    c_1 = true;
+    c_2 = true;
+    c_3 = true;
+    c_4 = true;
+    
+    while c_1 && c_2 && c_3 && c_4
+        beta_k_1 = beta_k;
+        f_beta_k_1 = f_beta_k;
+        
+        J = J_residu(beta_k);
+        Jt = J';
+        r = residu(beta_k);
+        
+        A = Jt * J;
+        B = Jt * r;
+        beta_k = beta_k - A\B;
+        
+        f_beta_k = (1/2)*norm(r)^2;
+        norm_grad_f_beta = norm(B);
+        
+        norm_delta = norm(beta_k_1 - beta_k);
+        
+        nb_it = nb_it + 1;
+        
+        c_1 = norm_grad_f_beta > max(option(2)*norm_grad_f_beta_0,option(1));
+        c_2 = abs(f_beta_k - f_beta_k_1) > max(option(2)*abs(f_beta_k),option(1));
+        c_3 = norm_delta > max (option(2)*norm(beta_k), option(1));
+        c_4 = nb_it < option(3);
     end
-
+    
+    beta = beta_k;
+    f_beta = f_beta_k;
+    
+    if ~c_1
+        exitflag = 1;
+    elseif ~c_2 
+        exitflag = 2;
+    elseif ~c_3 
+        exitflag = 3;
+    elseif ~c_4
+        exitflag = 4;
+    end
 end
