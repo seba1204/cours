@@ -253,13 +253,13 @@ procedure Test_LCA is
 
 	procedure Tester_La_Donnee_Erreur is
 		Annuaire : T_LCA;
-		Inutile: Integer;
+		-- Inutile: Integer;
 	begin
 		begin
 			Put_Line ("=== Tester_Supprimer_Erreur..."); New_Line;
 
 			Construire_Exemple_Sujet (Annuaire);
-			Inutile := La_Donnee (Annuaire, Inconnu);
+			-- Inutile := La_Donnee (Annuaire, Inconnu);
 
 		exception
 			when Cle_Absente_Exception =>
@@ -367,6 +367,7 @@ procedure Test_LCA is
 
 
 begin
+	Put_Line ("Début des tests");
 	Tester_Exemple_Sujet;
 	Tester_Supprimer_Inverse;
 	Tester_Supprimer;
