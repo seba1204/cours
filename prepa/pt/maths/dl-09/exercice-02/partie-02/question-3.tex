@@ -1,0 +1,29 @@
+D'après la formule des probabilités totales :
+\[
+  \underbrace{P(Z=n)}_{p_n} = P(Z=n|P_1)P(P_1) + P(Z=n|C_1\cap P_2)P(C_1\cap P_2) + P(Z=n|C_1\cap C_2)P(C_1\cap C_2)
+\]
+
+\begin{dinglist}{111}
+  \item \ul{$P(Z=n|P_1)P(P_1)$ :}
+  \begin{itemize}
+    \item \fbox{$P(P_1) = p$}
+    \item Puisque l'évenement $P_1$ vient d'être réalisé, on retourne à l'état initial, donc il ne reste plus que $n-1$ tirages possibles, d'où
+          \fbox{$P(Z=n|P_1) = p_{n-1}$}
+  \end{itemize}
+  \item \ul{$P(Z=n|C_1\cap P_2)P(C_1\cap P_2)$ :}
+  \begin{itemize}
+    \item \fbox{$P(C_1\cap P_2) = pq$}
+    \item Par le même raisonnement : \fbox{$P(Z=n|C_1\cap P_2) = p_{n-2}$}
+  \end{itemize}
+  \item \ul{$P(Z=n|C_1\cap C_2)P(C_1\cap C_2)$ :}
+  \begin{itemize}
+    \item \fbox{$P(C_1\cap C_2)= q^2$}
+    \item Pour $n>2$, l'évenement $(Z=n|C_1\cap C_2)$ n'est pas possible car une fois que l'on atteint $C_2$ l'expérience s'arrête, d'où \fbox{$P(Z=n|C_1\cap C_2) = 0$}
+  \end{itemize}
+\end{dinglist}
+
+D'où
+
+\begin{result}
+  $p_n = pp_{n-1} + pqp_{n-2}$
+\end{result}

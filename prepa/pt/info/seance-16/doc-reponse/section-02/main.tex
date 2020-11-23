@@ -1,0 +1,57 @@
+\section{Calculer une ligne}
+\q{Construire }\il{points(n, pas, x, y)}\q{ qui renvoie une liste
+$A = [A_i]_{i\in [\![o, n-1]\!]}$ contenant $n$ points $A_i$ sur la ligne de
+niveau $C_k$ où $k = f(A_0)$ en commençant par $A_0 = [x,y]$ et où tous les
+points suivants $A_i$ seront construits par récurrence de la manière suivante :}
+\begin{enumerate}[(a)]
+  \item \q{En $A_i$ sur la ligne de niveau $C_0$ on calcule vecteur tangent
+          unitaire $\vec{T}$ à partir de $\nabla f(A_i)$}
+  \item \q{On calcule le point intermédiaire $B_i$ tel que
+          $\overrightarrow{A_iB_i}=$ }\il{pas}\q{$\times\vec{T}$}
+  \item \q{On calcule $A_{i+1}$ tel que $\overrightarrow{OA_{i+1}}=
+            \overrightarrow{OB_i} + \lambda \nabla f(B_i)$ où $\lambda$
+          est tel que, d'après la formule de Taylor-Young à l'ordre 1, le point
+          $A_{i+1}$ soit sur la ligne de niveau $C_k$ où $k = f(A_0)$. La valeur
+          de $\lambda$ est supposée être faible devant celle du }\il{pas}\q{.}
+\end{enumerate}
+Par exemple, pour 10 points avec un pas de 0.5 à partir de (1, 0) on trouve
+\il{A = points(10, 0.5, 1, 0)} $\Rightarrow$ A = [
+[1.0, 0.0],
+[0.62, 0.32],
+[0.21, 0.6],
+[-0.24, 0.82],
+[-0.71, 0.97],
+[-1.19, 0.99],
+[-1.43, 0.85],
+[-1.44, 0.52],
+[-1.16, 0.15],
+[-0.8, -0.19]
+]
+\begin{dinglist}{111}
+  \item Je crée le fichier \il{test/exceptedOutput.py} dans lequel je mets les
+  résultats attendus pour tester ma fonction à la fin :
+  \codeFromFileT{test/exceptedOutput.py}{section-02/qa.py}
+  \item J'importe les résultats dans le fichier \il{main.py}
+  \codeFromFileT{main.py}{section-02/qb.py}
+  \item Je détermine $\lambda$ :
+  On a : $f(A_{i+1}) = k$, donc d'après la formule de Taylor à l'ordre 1 :
+  \[
+    k = f(A_{i+1}) = f(B_i) + \nabla f(B_i)\cdot\overrightarrow{B_iA_{i+1}}
+  \]
+  Or : $\overrightarrow{B_iA_{i+1}} = \lambda \nabla f(B_i)$\\
+  Donc : $\nabla f(B_i)\cdot\overrightarrow{B_iA_{i+1}} = \nabla f(B_i)\cdot\lambda
+    \nabla f(B_i)$\\
+  D'où :
+  \begin{result}
+    $\lambda = \frac{k-f(B_i)}{||\nabla f(B_i)||^2}$
+  \end{result}
+  \item Je code la fonction \il{points}
+  \codeFromFileT{main.py}{section-02/qc.py}
+
+  \item Je code un fonction \il{around} pour vérifier mes résultats :
+  \codeFromFileT{helpers/help.py}{section-02/qd.py}
+
+  \item Je teste tout ça :
+  \codeFromFileT{main.py}{section-02/qe.py}
+  Et le console affiche \il{True} !
+\end{dinglist}

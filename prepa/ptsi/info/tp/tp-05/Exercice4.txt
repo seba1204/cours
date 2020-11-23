@@ -1,0 +1,2 @@
+Q1) On obtient un triangle averc trois points (3,5); (2,0); (0,0)
+Q2) deux segments 

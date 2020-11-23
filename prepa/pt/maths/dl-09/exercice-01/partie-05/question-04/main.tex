@@ -1,0 +1,17 @@
+Soit $(x, t, k)\in \mathbb{R}\times]0, +\infty[\times\mathbb{N}$.\\
+Utilisons la formule d'Euler :
+\[
+  sin(xt) = \text{Im}\left(e^{ixt}\right)
+\]
+\[
+  \begin{array}{rrcl}
+                & J_{k_{Im}}(x) & = & \int\limits_{0}^{+\infty}{e^{-t(1+k-ix)}dt} \\
+    \Rightarrow & J_{k_{Im}}(x) & = & \frac{1}{1+k-ix}                            \\\\
+    \Rightarrow & J_{k_{Im}}(x) & = & \frac{1+k+ix}{(1+k)^2+x^2}                  \\\\
+    \Rightarrow & J_k(x)        & = & \frac{x}{(1+k)^2+x^2}                       \\\\
+  \end{array}
+\]
+Donc :
+\begin{result}
+  $\forall x\in\mathbb{R}, J_k(x) = \frac{x}{(1+k)^2+x^2}  $
+\end{result}

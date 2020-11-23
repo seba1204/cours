@@ -1,0 +1,80 @@
+Soit $t\in\mathbb{R}$\\
+\[
+  M(t) \in \Gamma\cap\mathcal{C}_0
+\]
+\[
+  \iff
+  \left\{
+  \begin{array}{l}
+    \left\{
+    \begin{array}{rcl}
+      x(t) & = & -2cos(t)-cos(2t) \\
+      y(t) & = & 2sin(t)-sin(2t)  \\
+    \end{array}
+    \right. \\\\
+    x^2+y^2=1
+  \end{array}
+  \right.
+\]
+\[
+  \begin{array}{crcl}
+    \iff & (-2cos(t)-cos(2t))^2+ (2sin(t)-sin(2t))^2                             & = & 1             \\
+    \iff & 4cos^2(t)+cos^2(2t)-4cos(t)cos(2t)+4sin^2(t)+sin^2(2t)-4sin(t)sin(2t) & = & 1             \\
+    \iff & 4 + 1 - 4cos(3t)                                                      & = & 1             \\
+    \iff & cos(3t)                                                               & = & 1             \\
+    \iff & t                                                                     & = & \frac{\pi}{3} \\
+  \end{array}
+\]
+D'où
+\begin{result}
+  $
+    K =
+    \left(
+    -\frac{1}{2},
+    \frac{\sqrt{3}}{2}
+    \right)
+  $
+\end{result}
+On cherche maintenant à calculer les vecteurs directeurs des tangentes de $\mathcal{C}_0$ et $\Gamma$ en $K$.
+\begin{dinglist}{111}
+  \item Tangente à $\Gamma$ :\\
+  Tangente dirigée par $\overrightarrow{f}'\left(\frac{\pi}{3}\right)$
+  \[
+    \mathcal{T} = K + Vect
+    \left\{
+    \begin{array}{c}
+      2\sqrt{3} \\
+      2
+    \end{array}
+    \right\}
+  \]
+  \item Tangente à $\mathcal{C}_0$ :\\
+  Tangente dirigée par
+  $
+    \left(
+    \begin{array}{c}
+        -sin(t) \\
+        cos(t)
+      \end{array}
+    \right)
+  $ pour $t = \frac{\pi}{3}$
+  \[
+    \mathcal{T}' = K + Vect
+    \left\{
+    \begin{array}{c}
+      -\frac{\sqrt{3}}{2} \\
+      \frac{1}{2}
+    \end{array}
+    \right\} = K + Vect
+    \left\{
+    \begin{array}{c}
+      2\sqrt{3} \\
+      2
+    \end{array}
+    \right\}
+  \]
+\end{dinglist}
+Ainsi :
+\begin{result}
+  $\Gamma$ et $\mathcal{C}_0$ sont tangentes en K.
+\end{result}

@@ -1,0 +1,31 @@
+Soit $(x, t, N)\in \mathbb{R}\times]0, +\infty[\times\mathbb{N}$.\\
+On a :
+
+\[
+  \begin{array}{rrcl}
+                & |h(x, t)|             & \leq & M|x|\frac{t}{e^t-1}            \\
+    \Rightarrow & |h(x, t)| e^{-(N+1)t} & \leq & M|x|\frac{te^{-(N+1)t}}{e^t-1} \\
+  \end{array}
+\]
+Or, on a les équivalences suivantes :
+\[
+  \begin{array}{rrcl}
+                & e^t-1                      & \underset{+\infty}{\sim} & e^t            \\
+    \text{et}   & t                          & =                        & o(e^t)         \\
+    \Rightarrow & \frac{te^{-(N+1)t}}{e^t-1} & =                        & o(e^{-(N+1)t}) \\
+    \Rightarrow & \frac{te^{-(N+1)t}}{e^t-1} & =                        & o(e^{-(N+1)t}) \\
+  \end{array}
+\]
+Ainsi :
+\[
+  \begin{array}{rrcl}
+                & |h(x, t)| e^{-(N+1)t}                                    & \leq & M|x|e^{-(N+1)t}                       \\
+    \Rightarrow & \int_{0}^{+\infty} {|h(x, t)| e^{-(N+1)t} dt}            & \leq & M|x|\int_{0}^{+\infty}{e^{-(N+1)t}dt} \\\\
+    \Rightarrow & \left|\int_{0}^{+\infty} {h(x, t) e^{-(N+1)t} dt}\right| & \leq & M|x|\int_{0}^{+\infty}{e^{-(N+1)t}dt} \\\\
+    \Rightarrow & \left|\int_{0}^{+\infty} {h(x, t) e^{-(N+1)t} dt}\right| & \leq & \frac{M|x|}{(N+1)}                    \\
+  \end{array}
+\]
+Par le théorème de l'encadrement, on a alors :
+\begin{result}
+  $\underset{N\rightarrow +\infty}{lim}R_n(x) = 0$
+\end{result}

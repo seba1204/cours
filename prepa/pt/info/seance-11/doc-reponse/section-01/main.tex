@@ -1,0 +1,25 @@
+\q{Donner les fonctions }\il{espe(X)}\q{ et }\il{varia(X)}\q{ qui donnent l’espérance et la variance d’une liste }
+\il{X}\q{ donnant la loi d’une variable aléatoire à valeurs dans $\mathbb{N}$.}
+
+\bigskip
+
+On a, par définition de l'espérance :
+\[
+  E(X) = \sum\limits_{i=0}^{+\infty}x_i\mathbb{P}(X=x_i)
+\]
+D'où :
+\codeFromFile{section-01/q1-1.py}
+
+
+\bigskip
+De même, par définition de la variance :
+\[
+  V(X) = E(X^2) - E(X)^2
+\]
+Or, d'après le théorème de transfert :
+\[
+  E(X^2) = \sum\limits_{i=0}^{+\infty}i^2\mathbb{P}(X=x_i)
+\]
+D'où :
+\codeFromFile{section-01/q1-2.py}
+

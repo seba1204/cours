@@ -1,0 +1,11 @@
+Q2)
+nombre d'itérations :  n
+
+Q4)
+
+nombre d'itérations :  1+(n/2)
+Q5)
+15129
+Q6)
+t=0.545916964904535 s
+la fonction puissrapide est 2* plus rapide

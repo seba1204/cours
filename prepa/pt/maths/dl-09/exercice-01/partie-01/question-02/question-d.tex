@@ -1,0 +1,25 @@
+Je suppose qu'ici c'est le piège d'inverser limite et somme infinie :
+\[
+  \underset{x\rightarrow0}{lim}\left( \sum\limits_{n=0}^{+\infty} \frac{2x}{n^2-x^2}\right)\underset{\text{pas forcément}}{=}0
+\]
+\textit{Ha oui mais non} car ici $g(0)$ existe d'après la question 2.(b). Donc on peut le calculer directement, sans faire de limite ?\\
+$g(0) = 0$ et
+\[
+  \begin{array}{rl}
+                & \varphi(x) = \frac{1}{x} + \frac{2x}{1-x^2} - g(x)     \\\\
+    \Rightarrow & \varphi(x) \underset{x\rightarrow 0}{\sim} \frac{1}{x}
+  \end{array}
+\]
+De plus, comme $\varphi$ est 1-périodique, $\varphi$ aura le même équivalent en $0$ qu'en $0+1$
+
+D'où
+\begin{result}
+  $
+    \left\{
+    \begin{array}{c}
+      \varphi(x) \underset{x\rightarrow 0}{\sim} \frac{1}{x} \\\\
+      \varphi(x) \underset{x\rightarrow 1}{\sim} \frac{1}{x}
+    \end{array}
+    \right.
+  $
+\end{result}

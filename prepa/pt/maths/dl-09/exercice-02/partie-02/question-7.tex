@@ -1,0 +1,16 @@
+\[
+  f(t) = \frac{q^2t^2}{1-pt-pqt^2} = -\frac{qt^2}{p(t-a)(t-b)} = -\frac{q}{p}t^2\frac{1}{(a-t)}\frac{1}{(b-t)} = -\frac{qt^2}{pab}\frac{1}{(1-\frac{t}{a})}\frac{1}{(1-\frac{t}{b})}
+\]
+Or $\frac{1}{(1-\frac{t}{a})}$ et $\frac{1}{(1-\frac{t}{b})}$ sont décompsables en séries entières de rayon respectifs $|a|$ et $|b|$.
+Comme il y a produit de 2 DSE, c'est le plus petit rayon des deux qui compte, ici $|a|$, donc $R\leq|a|$, mais $f$ n'existe pas en $t=a$ donc $R=|a|$.
+
+Donc :
+\begin{result}
+  $
+    \begin{array}{l}
+      f \text{ est développable en série entière} \\
+      \forall t \in ]-a, a[, f(t) = G_Z(t)        \\
+      R_Z = |a|                                   \\
+    \end{array}
+  $
+\end{result}

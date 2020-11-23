@@ -1,0 +1,35 @@
+\section{Methode de Simpson}
+\begin{enumerate}[(a)]
+  \item
+        \q{Donner une fonction }\il{simpson(f,n,a,b,M)}\q{qui, lorsque qu'on divise
+          l'intervalle $[a; b]$ en $n$ }\il{pas}\q{ renvoie dans un tuple le calcul de
+          $\int_a^bf(t)dt$ par la méthode de simpson ainsi que l'erreur du calcul.}
+
+        \codeFromFileT{main.py}{section-04/qa-1.py}
+
+  \item Donner alors $J$ pour $n = 182$ et vérifier que l'erreur est inférieure
+        à $10^{-6}$.\\
+        \il{print(simpson(g, 182, 0, 6, M))} donne
+        \[
+          \left\{
+          \begin{array}{rcl}
+            J           & = & \il{0.2001380266856075}    \\
+            \varepsilon & = & \il{9.796827123004573e-07} \\
+          \end{array}
+          \right.
+        \]
+
+  \item Donner une valeur optimale de $n$ pour que l'erreur soit inférieure à
+        $10^{-12}$.
+        \codeFromFileT{main.py}{section-04/qc-1.py}
+        \il{print(optim(M, 12))} donne $n =$ \il{5726}\\
+        \il{print(simpson(g, 5726, 0, 6, M))} donne en effet
+        \[
+          \left\{
+          \begin{array}{rcl}
+            J           & = & \il{0.2001380291480081}    \\
+            \varepsilon & = & \il{9.999208440734312e-13} \\
+          \end{array}
+          \right.
+        \]
+\end{enumerate}

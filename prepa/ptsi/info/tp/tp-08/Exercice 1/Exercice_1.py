@@ -1,0 +1,1 @@
+f=open('../../Utiles/LADISPARITION.txt','r')

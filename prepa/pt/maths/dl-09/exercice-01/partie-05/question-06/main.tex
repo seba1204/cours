@@ -1,0 +1,16 @@
+Soit $x\in \mathbb{R}$.\\
+\[
+  \begin{array}{rrcl}
+                & \frac{cosh(\pi x)}{sinh(\pi x)}                                   & =                        & \frac{e^x + e^{-x}}{e^x-e^{-x}}                                             \\\\
+    \Rightarrow & \frac{cosh(\pi x)}{sinh(\pi x)}                                   & \underset{+\infty}{\sim} & \frac{1 + \frac{\pi^2x^2}{2} + o(x^2)}{\pi x + \frac{\pi^3x^3}{6} + o(x^3)} \\\\
+    \Rightarrow & \frac{1}{2x}\left(\pi x\frac{cosh(\pi x)}{sinh(\pi x)} - 1\right) & \underset{+\infty}{\sim} & \frac{\pi^2}{6}x + o(x)  \\\\
+  \end{array}
+\]
+On remarque que :
+\[
+  \int_{0}^{+\infty}{\frac{t}{e^t-4}dt} = \Gamma'(0)
+\]
+D'où :
+\begin{result}
+  $\int_{0}^{+\infty}{\frac{t}{e^t-4}dt} = \frac{\pi^2}{6}$
+\end{result}

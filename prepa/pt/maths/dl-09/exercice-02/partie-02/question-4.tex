@@ -1,0 +1,14 @@
+Soit $t\in]-R_Z, R_Z[$.
+\[
+  \begin{array}{rrcl}
+                & G_Z(t)             & = & \sum p_n t^n                                                                                                                              \\
+    \Rightarrow & G_Z(t)             & = & \sum (p_{n-1} + qp_{n-2}) pt^n                                                                                                            \\
+    \Rightarrow & G_Z(t)             & = & p\sum p_{n-1}t^n +  pq\sum p_{n-2} t^n                                                                                                    \\\\
+    \Rightarrow & G_Z(t)             & = & pt\underbrace{\sum\limits_{n=0}^{+\infty} p_{n}t^n}_{G_Z(t)} + pqt^2\underbrace{\sum\limits_{n=0}^{+\infty}  p_{n} t^n}_{G_Z(t)} + p_2t^2 \\\\
+    \Rightarrow & G_Z(t)(1-pt-pqt^2) & = & q^2t^2                                                                                                                                    \\
+  \end{array}
+\]
+On a donc bien :
+\begin{result}
+  $G_Z(t)(1-pt-pqt^2) = q^2t^2$
+\end{result}

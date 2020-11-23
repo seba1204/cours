@@ -1,0 +1,45 @@
+Pour $t\in\mathbb{R}$, on a :
+\[
+  \overrightarrow{f}(t) =
+  \left(
+  \begin{array}{c}
+      -2cos(t)-cos(2t) \\
+      2sin(t)-sin(2t)  \\
+    \end{array}
+  \right)
+  \text{et}
+  \overrightarrow{f}'(t) =
+  \left(
+  \begin{array}{c}
+      2sin(t)+2sin(2t) \\
+      2cos(t)-2cos(2t) \\
+    \end{array}
+  \right)
+\]
+Définissons l'angle de relèvement $\alpha$ :
+\[\forall t\in\mathbb{R}, \alpha(t) = \arctan{\left(\frac{y'(t)}{x'(t)}\right)}\]
+et :
+\[
+  \forall t\in\mathbb{R},\gamma(t) = \frac{\alpha'(t)}{\left\|f'(t)\right\|}
+\]
+avec :
+\[
+  R = \frac{1}{\gamma}
+\]
+\[
+  \alpha = arctan
+  \left(2
+  \frac{cos(t)-cos(2t)}{sin(t)+sin(2t)}
+  \right)
+\]
+\[
+  \iff
+  \alpha' = \text{heu ça donne une grosse formule !}
+\]
+Ainsi, pour $t = \frac{\pi}{3}$, $\alpha' = \frac{1}{2}$.\\
+De plus,
+$\left\|f'(t)\right\| = \sqrt{2^2+\left(2\sqrt{3}\right)^2} = 4$
+D'où
+\begin{result}
+  $R = 8$
+\end{result}

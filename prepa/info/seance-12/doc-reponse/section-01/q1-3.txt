@@ -1,3 +1,0 @@
-size:   (800, 864)
-mode:   RGB
-format: JPEG

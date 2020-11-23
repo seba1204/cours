@@ -11,9 +11,9 @@ cos_alpha = cos(alpha);
 seuil_norme = 2/sin(alpha);				% Seuil sur la norme du gradient (decoule d'une etude theorique)
 
 % Lecture de l'image :
-I = imread('Images/Piree.png');
+% I = imread('Images/Piree.png');
 % I = imread('Images/chaises.png');
-% I = imread('Images/Morlaix.png');
+I = imread('Images/Morlaix.png');
 if size(I,3)==3
 	I = rgb2gray(I);
 end

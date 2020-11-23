@@ -1,0 +1,54 @@
+Soit $t \in \mathbb{R}$
+\[
+  \overrightarrow{u_{t}} =
+  \left(
+  \begin{array}{c}
+      cos(2t) + cos(t) \\
+      sin(2t) - sin(t) \\
+    \end{array}
+  \right)
+\]
+De plus, pour tout $t\in \mathbb{R}$, $\overrightarrow{u_t}$ dérivable.
+\[
+  \Rightarrow \overrightarrow{u_{t}}' =
+  \left(
+  \begin{array}{c}
+      -2sin(2t) - sin(t) \\
+      2cos(2t) - cos(t)  \\
+    \end{array}
+  \right)
+\]
+\textcolor{Blue}{\textit{\ul{Question :} Un vecteur n'est pas un matrice, or là j'ai écrit les coordonnées du vecteur en colonne. Est-ce faux ?}}
+\newline
+D'où
+\[
+  det(\overrightarrow{u_{t}}, \overrightarrow{u_{t}}') =
+  \left|
+  \begin{array}{c c}
+    cos(2t) + cos(t) & -2sin(2t) - sin(t) \\
+    sin(2t) - sin(t) & 2cos(2t) - cos(t)  \\
+  \end{array}
+  \right|
+\]
+\[
+  = \left[cos(2t) + cos(t)\right] \times
+  \left[2cos(2t) - cos(t)\right] +
+  \left[sin(2t) - sin(t)\right] \times
+  \left[2sin(2t) + sin(t)\right]
+\]
+\[
+  = 2
+  \underbrace{\left(cos^2(2t) + sin^2(2t)\right)
+  }_{1} +
+  \underbrace{cos(2t)cos(t) - sin(2t)sin(t)
+  }_{cos(3t)} -
+  \underbrace{\left(cos^2(t) + sin^2(t)\right)
+  }_{1}
+\]
+\[
+  = cos(3t) + 1
+\]
+D'où
+\begin{result}
+  $\forall t \in \mathbb{R}$, $det(\overrightarrow{u_{t}}, \overrightarrow{u_{t}}') = cos(3t) + 1$
+\end{result}

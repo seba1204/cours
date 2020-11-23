@@ -1,0 +1,24 @@
+\section{Exercice 2 : Nombres premiers}
+\begin{enumerate}
+  \item
+        \q{En utilisant}
+        \inlineCode{remove}
+        \q{donner la liste des 168 nombres premiers de 1 à 1 000 en utilisant le crible d'Eratosthène. Faire moins de 1 500 tours de boucle. De même trouver les 1 229 nombres premiers de 1 à 10 000 en faisant moins de 20 000 tours de boucle.}
+\end{enumerate}
+
+\codeFromFile{section-5/exercice_2.py}
+
+Résultats :
+\begin{code}
+  ========= Test pour n = 1000 =========
+  Le programme fait 831 tours (max : 1500 tours).
+  Temps d execution : 0.008s
+  Nombre de resultats : 168
+  Resultats :[2, 3, 5, 7, '...', 991, 997]
+
+  ========= Test pour n = 10000 =========
+  Le programme fait 8770 tours (max : 20000 tours).
+  Temps d execution : 0.595s
+  Nombre de resultats : 1229
+  Resultats :[2, 3, 5, 7, '...', 9967, 9973]
+\end{code}

@@ -1,1 +1,0 @@
-pixelArray = np.array(img)

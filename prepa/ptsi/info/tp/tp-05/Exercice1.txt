@@ -1,0 +1,7 @@
+Exercice 1
+Q3) 
+cube(3) = 27
+cube(caree(3))=729
+
+cube(caree(x)) <=> x**6
+caree(cube(x)) <=> x**6

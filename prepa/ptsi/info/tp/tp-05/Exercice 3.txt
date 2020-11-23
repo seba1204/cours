@@ -1,0 +1,14 @@
+Q2)
+a) => 1 car on fait 1 au carré au carré, ... ce qui fait 1
+b) => 0 de même
+c) 
+puiss(0.1,100)
+Out[32]: 0.0
+
+puiss(0.9,100)
+Out[33]: 0.0
+
+=> tend vers 0 rapidement
+d) +infini
+car on fait (((((2^2^)^2)^2)^2)^2)...
+elle tend vers +inf

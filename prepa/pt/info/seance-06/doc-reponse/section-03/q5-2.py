@@ -1,0 +1,7 @@
+X, Y = array(openCSV('ressources/fichier_point.csv'))
+Xc, Yc, R, n = cercle(X, Y)
+Xth, Yth = traceCercle(Xc, Yc, R, 1000)
+plt.plot(X, Y, 'rx')
+plt.plot(Xth, Yth, 'b')
+plt.text(0, 0, f'R = {R:.2f}')
+plt.show()

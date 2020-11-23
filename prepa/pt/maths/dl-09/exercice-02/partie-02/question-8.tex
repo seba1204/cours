@@ -1,0 +1,24 @@
+On calcule le produit de Cauchy pour trouver $G_z$ sous forme d'une seule somme, puis on identifie :\\
+Soit $t\in]-a, a[$
+\[
+  \begin{array}{rrcl}
+                & G_Z(t) & = & -\frac{qt^2}{pab}\frac{1}{(1-\frac{t}{a})}\frac{1}{(1-\frac{t}{b})}                                                                          \\\\
+    \Rightarrow & G_Z(t) & = & -\frac{qt^2}{pab}\sum\left(\frac{t}{a}\right)^n\sum\left(\frac{t}{b}\right)^n                                                                \\\\
+    \Rightarrow & G_Z(t) & = & -\frac{qt^2}{pab}\sum\limits_{n=0}^{+\infty}\sum\limits_{k=0}^{n}\frac{t^n}{a^kb^{n-k}}                                                      \\\\
+    \Rightarrow & G_Z(t) & = & \sum\limits_{n=0}^{+\infty}\underbrace{\left[-\frac{q}{pab^{n+1}}\sum\limits_{k=0}^{n}\left(\frac{b}{a}\right)^{k}\right]}_{P(Z=n+2)}t^{n+2} \\\\
+  \end{array}
+\]
+Or :
+\[
+  \sum\limits_{k=0}^{n}\left(\frac{b}{a}\right)^{k} = \frac{a^{n+1} - b^{n+1}}{a^{n+1}(a-b)}
+\]
+Donc
+\[
+  \begin{array}{rrcl}
+     & p_{n+2} & = & -\frac{q}{p(ab)^{n+1}} \frac{a^{n+1} - b^{n+1}}{a-b} \\\\
+  \end{array}
+\]
+D'où :
+\begin{result}
+  $p_n = \frac{q}{p(ab)^{n-1}} \frac{b^{n-1}-a^{n-1}}{a-b}$
+\end{result}
