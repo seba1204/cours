@@ -1,0 +1,21 @@
+% Retour personnalisé sur  mini-projet SDA : LCA
+% Auteur : Ismail Mendil
+% Etudiant : PONT Sébastien
+% Groupe de TP : L
+
+
+# Remarques générales:
+## Il faut lire le retour général pour savoir les erreurs à éviter dans la suite du mini-projet.
+
+# Remarques relatives au fichier lca_sujet.adb
+## Le programme souffre de fuites de mémoire (voir Valkyrie) car l'algrithme de Supprimer est incorrect.
+
+# Remarques relatives au fichier test_lca.adb
+## Le programme souffre de fuites de mémoire (voir Valkyrie).
+
+# Remarques relatives au fichier lca.adb
+## Dans Enregistrer: L'algorithme peut simplifier énormément si tu fusionnes le permier cas et le troisième.
+## Dans Supprimer: Il faut libérer la cellule avec Free
+## Dans Pour_Chaque: Très mauvaise gestion des exceptions. Il faut indiquer que le programme a rencontré un problème (afficher un message).
+
+# LISEZ-MOI
