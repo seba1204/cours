@@ -10,7 +10,7 @@ procedure Parenthesage is
             and then (Index'Result > Meule'Last or else Meule (Index'Result) = Aiguille)
     is
     begin
-        return 0;   -- TODO : à corriger !
+        return 0;   -- TODO: à corriger !
     end Index;
 
 
@@ -44,7 +44,7 @@ procedure Parenthesage is
         Ouvrants : Constant String := "([{";
         Fermants : Constant String := ")]}";
     begin
-        Null;   -- TODO : à corriger !
+        Null;   -- TODO: à corriger !
     end Verifier_Parenthesage;
 
 
