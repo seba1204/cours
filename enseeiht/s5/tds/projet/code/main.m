@@ -1,7 +1,13 @@
-Nb_bit = 84000;
-Donnee = bits;
-F0 = 1180;
-F1 = 980;
+%image
+% Nb_bit = 84000;
+% Donnee = bits;
+% F0 = 1180;
+% F1 = 980;
+%perso
+Nb_bit = 8;
+Donnee = randi([0,1],1,Nb_bit);
+F0 = 1000;
+F1 = 600;
 debit = 300;
 Ts = 1/debit;
 Fe = 48000;
@@ -10,10 +16,12 @@ Ns = round(Ts/Te);
 NRZ = kron(Donnee,ones(1,Ns));
 t = [0:Te:(Ns*Nb_bit-1)*Te];
 %subplot(4,2,1), plot(t,NRZ);
-phi0 = rand*2*pi
+phi0 = rand*2*pi;
 phi1 = rand*2*pi;
 x = (1-NRZ).*cos(2*pi*F0*t + phi0) + NRZ.*cos(2*pi*F1*t + phi1);
-subplot(4,2,1), title("x") ,plot(t,x);
+subplot(4,2,1), title("x"), plot(t,x); hold on
+
+plot(t,changem(NRZ,-1,0), 'r')
 
 
 %bruit :
@@ -121,4 +129,4 @@ subplot(4,2,8), plot(t,kron(Donnee_retrouve_3,ones(1,Ns)), 'g'); hold on
 Nb_erreur_3 = sum(Donnee ~= Donnee_retrouve_3);
 taux_erreur_3 = Nb_erreur_3/Nb_bit
 
-reconstitution_image(Donnee_retrouve_3);
+% reconstitution_image(Donnee_retrouve_3);
