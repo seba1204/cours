@@ -1,0 +1,116 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+
+\usepackage{listings}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[explicit]{titlesec}
+\usepackage{tcolorbox}
+
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{stmaryrd} 
+\usepackage{wasysym} % pour le smiley \frownie
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titling}
+\usepackage{pifont} % Pour la puce de Gineste
+\usepackage{soul} % Pour souligner
+
+\usepackage{pgfplots} % Pour tracer des courbes
+
+\usepackage{blkarray} % pour les matrices décorées
+\usepackage{graphicx} % pour les images
+
+\newcommand{\Author}{Equipe KL-02}
+\newcommand{\Date}{16 Janvier 2021}
+\newcounter{annexecounter}
+\setcounter{annexecounter}{0}
+\newcommand{\annexe}[1]{
+  \stepcounter{annexecounter}
+  \subsection{Annexe \Alph{annexecounter}  : #1}
+}
+
+\title{
+    \vspace{-1.5cm}
+    \underline{\underline{Projet : }}\\
+    Calcul efficace du PageRank
+    \vspace{-2.0cm}
+  }
+\date{}
+\author{}
+
+\definecolor{Red}{RGB}{231, 76, 60}
+\definecolor{Green}{RGB}{46, 204, 113}
+\definecolor{Blue}{RGB}{41, 128, 185}
+\definecolor{Purple}{RGB}{155, 89, 182}
+\definecolor{DarkBlue}{RGB}{44, 62, 80}
+\newtcolorbox{result}{
+    before=\par\smallskip\centering,
+    after=\par,
+    hbox,
+    colframe=Green,
+    colback=green!5,
+    }
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{Red}}
+  {\thesection .}
+  {1em}
+  {#1}
+  [{\titlerule[0.8pt]}]
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\color{Blue}}
+  {\thesection.\thesubsectionsection.}
+  {1em}
+  {#1}
+  [{\titlerule[0.8pt]}]
+
+\def\thesubsectionsection{\arabic{subsection}}
+
+\pagestyle{fancy}
+
+
+\renewcommand\headrulewidth{1pt}
+\fancyhead[L]{PIM - Projet}
+\fancyhead[R]{\Date}
+
+\renewcommand\footrulewidth{1pt}
+\fancyfoot[L]{\Author}
+\fancyfoot[R]{ENSEEIHT}
+\fancyfoot[C]{\thepage/\pageref{LastPage}}
+
+\fancypagestyle{plain}{}
+
+
+\newcommand{\executeiffilenewer}[3]{%
+\ifnum\pdfstrcmp{\pdffilemoddate{#1}}%
+{\pdffilemoddate{#2}}>0%
+{\immediate\write18{#3}}\fi%
+}
+\newcommand{\includesvg}[1]{%
+\executeiffilenewer{#1.svg}{#1.pdf}%
+{inkscape -D #1.svg -o #1.pdf --export-latex}%
+\input{#1.pdf_tex}%
+}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\listoffigures
+\newpage
+
+\input{partie-1/main}
+\input{partie-2/main}
+\input{annexes/main}
+
+\end{document}

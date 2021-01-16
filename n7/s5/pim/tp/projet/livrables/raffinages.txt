@@ -1,0 +1,217 @@
+R0 : Trier les pages Internet
+
+R1 : Comment << trier les pages Internet >> ?
+    Lire les arguments fournis par l'utilisateur    nom_fichier:    out     Chaine
+                                                    a:              out     Réel
+                                                    maxiter:        out     Entier
+                                                    p:              out     Booléen
+    Créer la matrice G                              G:              out     Tableau
+                                                    Taille:         out     Entier
+    
+
+    Initialiser le tableau pi des poids             Taille:         in      Entier
+    Rechercher la valeur finale du vecteur pi       maxiter:        in      Entier
+                                                    pi:             in out  Entier
+    Trier les éléments de pi par ordre de poids croissant      pi:  in out  Tableau
+    Générer les fichiers de sortie                   pi, copi:      in      Tableau
+                                                     Taille:        in      Entier
+                                                     a:             in      Réel
+                                                     maxiter:       in      Entier
+
+
+   
+R2 : Comment << lire les arguments fournis par l'utilisateur >> ?
+    Debut
+        Traiter les arguments               i:              in      Entier
+                                            p:              in      Booléen
+                                            a:              in      Réel
+                                            nom_fichier:    out     Chaine
+    Exception
+        Autres => 
+            Ecrire ("Un problème a été rencontré lors du traitrement des arguments, l'opération n'a pas abouti")
+            Quitter
+    Fin
+
+R2 : Comment << créer la matrice G >> ?
+    Trigger Est Booléen <-- Vrai
+    Taille Est Entier 
+    Taille <-- Acquérir(nom_fichier)      -- Acquérir en ada
+
+    G Est Tableau (1..Taille, 1..Taille) de Réels 
+    
+    Pour i de 1 à Taille
+        Parcourir les liens du site             i, Taille:      in      Entier
+                                                nom_fichier:    in      Chaine
+                                                G:              in out  Tableau
+                                                Trigger:        out     Booléen
+    FinPour
+
+R2 : Comment << Initialiser le tableau pi des poids >> ?
+    pi Est Tableau(1..Taille) de pointeurs vers Record(poids : Réel, index : Entier)
+    Pour i dans 1..Taille Faire
+        pi(i)^.index <-- i
+        pi(i)^.poids <-- 1/Taille
+    FinPour
+    
+R2 : Comment << rechercher la valeur finale du vecteur pi >> ?
+    Pour i dans 1..maxiter Faire
+        Multiplier pi par G                     pi: in out Tableau
+    FinPour
+
+R2 : Comment << trier les éléments de pi par ordre de poids croissant >> ?
+    -- on choisit de faire un tri par insertion
+    courant Est Record(poids : Réel, index : Entier)
+    j Est Entier
+    
+    copi Est Tableau(1..Taille) de pointeurs vers Record(poids : Réel, index : Entier)
+    
+    Pour i dans 1..Taille faire -- faire une copie de pi
+        copi(i)^.poids <-- pi(i)^.poids
+        copi(i)^.index <-- pi(i)^.index
+    FinPour
+    Pour i dans 1..Taille-1 Faire
+        courant <-- copi(i)
+        j <-- i
+        TantQue j > 0 et copi(j - 1)^.poids > courant^.poids
+            copi(j) <-- copi(j-1)
+            j <-- j - 1
+        FinTantQue
+        copi(j) <-- courant
+    FinPour 
+    --  copi est maintenant trié
+        
+            
+
+R2 : Comment << générer les fichiers de sortie >> ?
+    nom_fichier_ord Est Chaine <-- "sortie.ord"
+    nom_fichier_p   Est Chaine <-- "sortie.p"
+    fichier_ord     Est Fichier
+    fichier_p       Est Fichier
+
+    Créer fichier (fichier_ord, nom_fichier_ord)
+    Créer fichier (fichier_p, nom_fichier_p)
+    Ecrire les indices dans un fichier  fichier_ord : in    Fichier
+                                     copi           : in    Tableau
+                                     Taille         : in    Entier
+    Ecrire les poids dans un fichier    fichier_p   : in    Fichier
+                                     pi             : in    Tableau
+                                     maxiter        : in    Entier
+                                     a              : in    Réel
+                                     Taille         : in    Entier
+    
+R3 : Comment << écrire les indices dans un fichier >> ?
+    Pour i allant de 1 à Taille
+        Ecrire(fichier_ord, copi(i)^.index)
+    FinPour
+    Fermer (fichier_ord)
+
+R3 : Comment << écrire les poids dans un fichier >> ?
+    Ecrire (fichier_p, Taille)
+    Ecrire (fichier_p, a)
+    Ecrire (fichier_p, maxiter)
+    Pour i allant de 1 à Taille
+        Ecrire(fichier_p, copi(i)^.poids)
+    FinPour
+    Fermer (fichier_p)
+
+
+R3 : Comment << Multiplier pi par G >> ?
+    sum     Est Réel
+    Pour i dans 1..Taille Faire
+        sum <-- 0
+        Pour j dans 1..Taille Faire
+            sum <-- sum + pi(j).poids*G(j,i)
+        FinPour
+        pi(i).poids <-- sum
+    FinPour
+
+R3 : Comment << Traiter les arguments >> ?
+    p       Est Booléen <-- Faux
+    maxiter Est Entier  <-- 150
+    a       Est Réel    <-- 0.85
+    curseur Est Entier  <-- 1
+
+    TantQue curseur < Argument_Count Faire
+        Selon Argument(curseur) Dans
+            "-P" =>
+                p <-- Vrai
+                curseur <-- curseur + 1
+            "-I" =>
+                curseur <-- curseur + 1
+                Si Argument(curseur) > 0
+                    maxiter <-- Argument(curseur)
+                    curseur <-- curseur + 1
+                Sinon
+                    Ecrire ("Attention -I doit être suivit d'un entier positif.")
+                    Lever Exception ("Mauvais paramètre d'itération.")
+                FinSi
+            "-A" =>
+                curseur <-- curseur + 1
+                Si Argument(curseur) > 0
+                    a <-- Argument(curseur)
+                Sinon
+                    Ecrire ("Attention -A doit être suivit d'un réel compris entre 0 et 1 (inclus).")
+                    Lever Exception ("Mauvais paramètre alpha.")
+                FinSi
+
+                curseur <-- curseur + 1          
+            Autres =>
+                Ecrire ("Attention ")
+                Ecrire ('Argument(curseur)')
+                Ecrire (" n'est pas reconnu.")
+                Lever Exception "Mauvais argument" 
+        FinSelon
+    FinTantQue
+    
+    nom_fichier <-- Argument(curseur)
+
+R3 : Comment << Parcourir les liens du site >> ?
+    -- Tampon n'est pas creux pour l'instant (cas naïf)
+    Tampon Est Tableau(1..Taille) de Réels
+    Compteur Est Entier <-- 0
+    Referenceur Est Entier <-- 0
+    Destinataire Est Entier <-- 0
+
+    Si Trigger Est Vrai Alors
+        Referenceur <-- Acquérir (nom_fichier)
+    FinSi
+
+    Trigger <-- Faux
+
+    TantQue Referenceur = i Faire
+        Compteur += 1
+        Destinataire <-- Acquérir (nom_fichier)
+        Tampon(Destinataire) <-- 1 -- valeur temporaire remplacée par 1/Compteur à la fin du processus
+        Trigger <-- Vrai
+    FinTantQue
+
+    Enregistrer dans G          Referenceur:    in      Entier
+                                Destinataire:   in      Entier
+                                Tampon:         in      Tableau
+                                Taille:         in      Entier
+                                Trigger:        in      Booléen
+                                i:              in      Entier
+                                G:              out     Tableau
+
+
+R4 : Comment  << Enregistrer dans G >> ?
+    Si Trigger Est Faux Alors
+        Affecter à la ligne i la valeur 1/Taille            i, Taille:  in      Entier
+                                                            G:          out     Tableau
+    Sinon
+        Copier Tampon dans la ligne i                       i:         in   Entier
+                                                            a:         in   Réel
+                                                            Tampon:    in   Tableau
+                                                            G:         out  Tableau
+    FinSi
+
+
+R5 : Comment << Affecter à la ligne i la valeur 1/Taille >> ?
+    Pour j allant de 1 à Taille
+        G(i, j) <-- 1/Taille
+    FinPour
+
+R5 : Comment << Copier Tampon dans la ligne i >> ?
+    Pour j allant de 1 à Taille 
+        G(i,j) <-- Tampon(j)* a + (1-a)/Taille
+    FinPour

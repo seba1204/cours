@@ -1,0 +1,144 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatA
+A -gnatwa
+A -gnata
+A -g
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U main%b		main.adb		f17e3ce0 NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+Z ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W exceptions%s		exceptions.ads		exceptions.ali
+W google_naive%s	google_naive.adb	google_naive.ali
+W helpers%s		helpers.adb		helpers.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20200228061810 76789da1 ada%s
+D a-charac.ads		20200228061810 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200228061810 66457d31 ada.characters.latin_1%s
+D a-comlin.ads		20200228061810 4aa66568 ada.command_line%s
+D a-except.ads		20200228061810 a7106115 ada.exceptions%s
+D a-finali.ads		20200228061810 bf4f806b ada.finalization%s
+D a-flteio.ads		20200228061810 e18a47a0 ada.float_text_io%s
+D a-inteio.ads		20200228061810 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200228061810 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200228061810 119b8fb3 ada.streams%s
+D a-string.ads		20200228061810 90ac6797 ada.strings%s
+D a-strmap.ads		20200228061810 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200304060544 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200228061810 edddc8f0 ada.tags%s
+D a-textio.ads		20200228061810 aef4d56d ada.text_io%s
+D a-tiflio.ads		20200228061810 bf196650 ada.text_io.float_io%s
+D a-tiinio.ads		20200228061810 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200228061810 0e9b276f ada.unchecked_conversion%s
+D exceptions.ads	20201218195038 b8f46a2e exceptions%s
+D google_naive.ads	20201219032756 9b7e4442 google_naive%s
+D google_naive.adb	20201219035656 24759ae3 google_naive%b
+D helpers.ads		20201219035250 7a72fde9 helpers%s
+D interfac.ads		20200228061810 5ab55268 interfaces%s
+D i-cstrea.ads		20200228061810 e53d8b8e interfaces.c_streams%s
+D main.adb		20201219034326 bed09f3e main%b
+D system.ads		20200228061810 32a08138 system%s
+D s-atocou.ads		20200228061810 b45c2d8d system.atomic_counters%s
+D s-conca3.ads		20200228061810 0b705ca5 system.concat_3%s
+D s-crtl.ads		20200228061810 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200228061810 54135002 system.exception_table%s
+D s-ficobl.ads		20200228061810 078245e4 system.file_control_block%s
+D s-finmas.ads		20200228061810 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200228061810 4ff27390 system.finalization_root%s
+D s-memory.ads		20200228061810 597d6634 system.memory%s
+D s-parame.ads		20200228061810 4752c4cb system.parameters%s
+D s-secsta.ads		20200327060540 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200228061810 a7318a92 system.soft_links%s
+D s-stache.ads		20200228061810 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200228061810 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200228061810 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200228061810 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200313060448 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200317060516 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200424050626 9a2744e9 system.stream_attributes%s
+D s-traent.ads		20200228061810 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200319060540 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200228061810 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [main standard 9 11 none]
+G r i none [main standard 9 11 none] [google_naive standard 12 9 none]
+G r c none [main standard 9 11 none] [lire_args helpers 15 14 none]
+G r c none [main standard 9 11 none] [chemin helpers 12 13 none]
+G r c none [main standard 9 11 none] [nom helpers 13 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 25|1r6 1r33 2r6 2r33 4r6 4r33
+X 11 a-string.ads
+16K13*Strings 35e16 25|2r10 2r37
+X 13 a-strunb.ads
+82K21*Unbounded 758e26 25|2w18 2r45
+87R9*Unbounded_String<6|43R9> 741e14 25|16r19
+X 15 a-textio.ads
+57K13*Text_IO 727e16 25|1w10 1r37 4w10 4r37
+465U14*Put 25|51s7
+X 19 exceptions.ads
+1K9*Exceptions 11e15 25|3w6 3r33
+9X9*ERREUR_Lire_Args 25|47r9
+X 20 google_naive.ads
+9F9 T_Float 25|12r7
+10i4 CAPACITE_MAX{integer} 25|12r28
+12k9*Google_Naive 46e17 25|6w6 11r38
+13A9 T_Google(22|8F9) 25|20r19[11]
+14A9 T_Poids(40R9[25|11]) 25|21r19[11] 22r19[11]
+19U14 Initialiser_Coefs 25|34s7[11]
+21U14 Calculer_Coefs 25|36s7[11]
+25U14 Initialiser_Poids 25|38s7[11]
+27U14 Calculer_Poids 25|40s7[11]
+31U14 Trier_Poids 25|42s7[11]
+34U14 Creer_Fichiers 25|44s7[11]
+40R9 T_Page
+X 22 helpers.ads
+6K9*Helpers 21e12 25|5w6 5r33
+8F9*T_Double<short_float> 25|12r18 17r19
+15U14*Lire_Args 25|28s4
+X 25 main.adb
+9U11*Main 9b11 52l5 52t9
+11K12 Google_Table_Naive[20|12] 13r8
+16r4 Nom_Fichier{13|87R9} 28m15 36r26 44r57
+17f4 A{22|8F9} 28m28 36r47 44r44
+18i4 Max_Iter{integer} 28m31 40r38 44r47
+19b4 P{boolean} 28m41
+20a4 G{20|13A9[11]} 34m26 36m23 40r27
+21a4 Pi{20|14A9[11]} 38m26 40m23 42r29 44r23
+22a4 Pi_Trie{20|14A9[11]} 42m20 44r27
+23i4 Taille{integer} 36m39 38r30 40r30 42r33 44r36
+24b4 Aide_Demande{boolean} 28m44 30r12
+X 26 system.ads
+67M9*Address
+X 34 s-memory.ads
+53V13*Alloc{26|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{26|67M9} 105i<c,__gnat_realloc>22
+X 40 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+

@@ -1,0 +1,26 @@
+google_naive.adb:139:32: invalid use of formal incomplete type
+google_naive.adb:142:10: array type required in indexed component
+google_naive.adb:143:10: array type required in indexed component
+google_naive.adb:152:07: invalid use of formal incomplete type
+google_naive.adb:161:26: invalid use of type before its full declaration
+google_naive.adb:188:33: array type required in indexed component
+google_naive.adb:190:13: array type required in indexed component
+google_naive.adb:194:13: array type required in indexed component
+google_naive.adb:194:29: array type required in indexed component
+google_naive.adb:204:07: invalid use of formal incomplete type
+google_naive.adb:204:30: invalid use of formal incomplete type
+google_naive.adb:212:10: array type required in indexed component
+google_naive.adb:212:31: array type required in indexed component
+google_naive.adb:213:10: array type required in indexed component
+google_naive.adb:213:31: array type required in indexed component
+google_naive.adb:217:27: array type required in indexed component
+google_naive.adb:218:27: array type required in indexed component
+google_naive.adb:221:31: array type required in indexed component
+google_naive.adb:222:13: array type required in indexed component
+google_naive.adb:222:28: array type required in indexed component
+google_naive.adb:226:10: array type required in indexed component
+google_naive.adb:227:10: array type required in indexed component
+google_naive.adb:237:07: invalid use of formal incomplete type
+google_naive.adb:237:24: invalid use of formal incomplete type
+google_naive.adb:258:28: array type required in indexed component
+google_naive.adb:262:33: array type required in indexed component

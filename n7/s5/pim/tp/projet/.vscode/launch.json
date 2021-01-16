@@ -1,0 +1,27 @@
+// launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) Build & debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/obj/pagerank.exe",
+      "args": ["src/exemples/worm.net"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:\\GNAT\\2020\\bin\\gdb.exe",
+      "preLaunchTask": "Build",
+      "setupCommands": [
+        {
+          "description": "Autoformatting",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

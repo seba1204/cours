@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "C:\\GNAT\\2020\\bin\\gprbuild.exe",
+      "args": [
+        "${workspaceFolder}\\src\\pageRank.gpr",
+        "-f",
+        "-cargs",
+        "-g"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Lint",
+      "type": "shell",
+      "command": "gnatpp -P pagerank.gpr --alignment --name-mixed-case --attribute-mixed-case --keyword-lower-case --type-mixed-case --pragma-lower-case --comments-gnat-beginning --comments-fill --insert-blank-lines --eol=lf --wide-character-encoding=8 --quiet",
+      "group": "none",
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

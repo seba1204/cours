@@ -1,0 +1,21 @@
+with "helpers/helpers";
+with "google/google";
+
+project Pagerank is
+    for Object_Dir use "obj";
+    -- for Exec_Dir use ".";
+    for Main use ("pagerank.adb");
+
+    package Binder is
+       for Default_Switches ("ada") use ("-E");
+    end Binder;
+
+    package Builder is
+       for Default_Switches ("ada") use ("-s");
+       -- for Default_Switches ("ada") use ("-gnatwa", "-gnata", "-g", "-C");
+    end Builder;
+
+    package Compiler is
+        for Default_Switches ("ada") use ("-gnatwa", "-gnata", "-g");
+    end Compiler;
+end Pagerank;

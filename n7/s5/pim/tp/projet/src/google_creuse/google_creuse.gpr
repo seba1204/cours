@@ -1,0 +1,6 @@
+with "../exceptions/exceptions";
+
+project Google_Creuse is
+    for Source_Dirs use (".");
+    for Object_Dir use "../obj";
+end Google_Creuse;
