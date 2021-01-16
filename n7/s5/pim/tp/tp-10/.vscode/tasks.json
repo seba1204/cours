@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "C:\\GNAT\\2020\\bin\\gprbuild.exe",
+      "args": ["${workspaceFolder}\\tp10.gpr", "-f", "-cargs", "-g"],
+      "group": { "kind": "build", "isDefault": true }
+    }
+  ]
+}

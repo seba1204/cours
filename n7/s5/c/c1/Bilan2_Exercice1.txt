@@ -1,0 +1,43 @@
+Indiquer vos réponses aux questions de l'exercice 1 du Bilan 2 ci-après : 
+
+[B1.1] Quelle est la portée de chaque variable déclarée ? Pour chaque variable, on donnera le numéro de ligne où commence et se termine sa portée.
++----------+-----------------+-----+
+| Variable | Début de portée | Fin |
++----------+-----------------+-----+
+|     n    |        8        | 37  |
++----------+-----------------+-----+
+|     p    |        9        | 37  |
++----------+-----------------+-----+
+|     a    |        13       | 18  |
++----------+-----------------+-----+
+|     n    |        22       | 25  |
++----------+-----------------+-----+
+|     r    |        30       | 33  |
++----------+-----------------+-----+
+
+[B1.2] Y a-t-il un exemple de masquage de variable dans ce programme ?
+Oui, la variable n déclarée à la ligne 22 masque la varibale globale n déclarée ligne 8
+
+
+
+[B1.3] Peut-on savoir ce que devrait afficher l’exécution de ce programme ?
+Non, car aorès la ligne 18, le pointer p pointe vers une case mémoire qui est libérée, et peut donc être modifiée par d'autres programmes.
+
+
+
+[B1.4] Même s’il compile sans erreur, ce programme est faux. Pourquoi ?
+Le pointer p se voit attribuer l'adresse de la varibale a à la ligne 14.
+A la ligne 18, la variable a est supprimée, mais le pointer pointe toujours vers cette adresse.
+
+
+
+[B1.5] La valeur de `p` change-t-elle après l’initialisation de la ligne 14 ?
+Oui, le pointer p était initialement nul, après l’initialisation de la ligne 14, il vaut l'adresse de la variable a.
+
+
+
+[B1.6] Que se passerait-il si on modifiait `*p` après la ligne 19 ?
+On modifierait le contenu de mémoire stockée à l'adresse qui stockait a avant qu'elle ne soit supprimée.
+Maintenant, cette mémoire peut être utilisée par un autre programme.
+
+En ada il me semble que l'on ne peut plus modifier la valeur après désinstanciation d'une variable en passant par son pointer.

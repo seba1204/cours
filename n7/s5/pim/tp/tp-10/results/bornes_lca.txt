@@ -1,0 +1,129 @@
+Borne  : 10
+Taille : 10
+Calcul des statistiques en cours...
+Min : 1
+Max : 2
+Dif : 1
+Borne  : 10
+Taille : 100
+Calcul des statistiques en cours...
+Min : 6
+Max : 14
+Dif : 8
+Borne  : 10
+Taille : 1000
+Calcul des statistiques en cours...
+Min : 89
+Max : 115
+Dif : 26
+Borne  : 10
+Taille : 10000
+Calcul des statistiques en cours...
+Min : 962
+Max : 1039
+Dif : 77
+Borne  : 10
+Taille : 100000
+Calcul des statistiques en cours...
+Min : 9869
+Max : 10178
+Dif : 309
+Borne  : 10
+Taille : 1000000
+Calcul des statistiques en cours...
+Min : 99579
+Max : 100238
+Dif : 659
+Borne  : 10
+Taille : 10000000
+Calcul des statistiques en cours...
+Min : 998057
+Max : 1001780
+Dif : 3723
+Borne  : 100
+Taille : 100
+Calcul des statistiques en cours...
+Min : 1
+Max : 4
+Dif : 3
+Borne  : 100
+Taille : 1000
+Calcul des statistiques en cours...
+Min : 3
+Max : 17
+Dif : 14
+Borne  : 100
+Taille : 10000
+Calcul des statistiques en cours...
+Min : 74
+Max : 120
+Dif : 46
+Borne  : 100
+Taille : 100000
+Calcul des statistiques en cours...
+Min : 936
+Max : 1082
+Dif : 146
+Borne  : 100
+Taille : 1000000
+Calcul des statistiques en cours...
+Min : 9721
+Max : 10232
+Dif : 511
+Borne  : 100
+Taille : 10000000
+Calcul des statistiques en cours...
+Min : 99211
+Max : 100763
+Dif : 1552
+Borne  : 1000
+Taille : 1000
+Calcul des statistiques en cours...
+Min : 1
+Max : 5
+Dif : 4
+Borne  : 1000
+Taille : 10000
+Calcul des statistiques en cours...
+Min : 1
+Max : 22
+Dif : 21
+Borne  : 1000
+Taille : 100000
+Calcul des statistiques en cours...
+Min : 70
+Max : 130
+Dif : 60
+Borne  : 1000
+Taille : 1000000
+Calcul des statistiques en cours...
+Min : 905
+Max : 1138
+Dif : 233
+Borne  : 1000
+Taille : 10000000
+Calcul des statistiques en cours...
+Min : 9604
+Max : 10302
+Dif : 698
+Borne  : 10000
+Taille : 10000
+Calcul des statistiques en cours...
+Min : 1
+Max : 8
+Dif : 7
+Borne  : 10000
+Taille : 100000
+Calcul des statistiques en cours...
+Min : 1
+Max : 23
+Dif : 22
+Borne  : 10000
+Taille : 1000000
+Calcul des statistiques en cours...
+Min : 68
+Max : 141
+Dif : 73
+Borne  : 10000
+Taille : 10000000
+Calcul des statistiques en cours...

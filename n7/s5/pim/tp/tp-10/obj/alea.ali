@@ -1,0 +1,62 @@
+V "GNAT Lib v2020"
+A -gnatA
+A -gnatwa
+A -gnata
+A -g
+A -gnata
+A -g
+A -gnat12
+A -gnatwa
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U alea%b		alea.adb		0c378ff0 NE OO PK GE
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+W system%s		system.ads		system.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+
+U alea%s		alea.ads		9fe1c6b1 BN EE NE OO PK GE
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-numeri.ads		20200819050644 bb51c45a ada.numerics%s
+D a-nudira.ads		20200819050644 5984dff3 ada.numerics.discrete_random%s
+D a-nudira.adb		20200819050644 0bfd6ec4 ada.numerics.discrete_random%b
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D alea.ads		20201129120354 9fe1c6b1 alea%s
+D alea.adb		20201129111956 ca5296b2 alea%b
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D system.ads		20200819050648 32a08138 system%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-rannum.ads		20200819050648 99ade2f2 system.random_numbers%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+G a e
+G c Z s b [alea standard 6 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 7|1r6 7r32
+X 2 a-numeri.ads
+16K13*Numerics 32e17 7|1r10 7r36
+X 3 a-nudira.ads
+44k22*Discrete_Random 81e33 7|1w19 7r45
+50R9 Generator<11|63R9> 7|10r30[7]
+52V13 Random{integer} 7|14s19[7]
+61U14 Reset<11|100p14> 7|18s4[7]
+X 6 alea.ads
+2i4 Lower_Bound{integer} 7|5r40
+3i4 Upper_Bound{integer} 7|5r55
+6k9*Alea 2z4 3z4 14l5 14e9 7|3b14 19l5 19t9
+12U14*Get_Random_Number 12<33 7|12b14 15l8 15t25
+12i33 Resultat{integer} 7|12b33 14m7
+X 7 alea.adb
+5I12 Intervalle{integer} 7r62
+7K12 Generateur_P[3|44] 8r8 10r17
+10r4 Generateur{3|50R9[7]} 14r27 18r11
+

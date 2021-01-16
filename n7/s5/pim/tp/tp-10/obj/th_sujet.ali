@@ -1,0 +1,152 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatA
+A -gnatwa
+A -gnata
+A -g
+A -gnata
+A -g
+A -gnat12
+A -gnatwa
+A -g
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTION_PROPAGATION
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_NESTED_FINALIZATION
+RV NO_RECURSION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_ALLOCATORS_AFTER_ELABORATION
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+
+U th_sujet%b		th_sujet.adb		b14fd007 NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+Z ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+Z ada.unchecked_deallocation%s
+Z lca%s			lca.adb			lca.ali
+Z sda_exceptions%s	sda_exceptions.ads	sda_exceptions.ali
+Z system%s		system.ads		system.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.finalization_masters%s  s-finmas.adb	s-finmas.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.pool_global%s	s-pooglo.adb		s-pooglo.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+Z system.storage_elements%s  s-stoele.adb	s-stoele.ali
+Z system.storage_pools%s  s-stopoo.adb		s-stopoo.ali
+Z system.storage_pools.subpools%s  s-stposu.adb	s-stposu.ali
+W th%s			th.adb			th.ali
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-charac.ads		20200819050642 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200819050642 66457d31 ada.characters.latin_1%s
+D a-except.ads		20200819050644 a7106115 ada.exceptions%s
+D a-finali.ads		20200819050644 bf4f806b ada.finalization%s
+D a-inteio.ads		20200819050644 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
+D a-string.ads		20200819050644 90ac6797 ada.strings%s
+D a-strmap.ads		20200819050644 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200819050644 1656705b ada.strings.unbounded%s
+D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
+D a-tiinio.ads		20200819050644 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20200819050644 eff36322 ada.unchecked_deallocation%s
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
+D lca.ads		20201129120424 fe0e5a8a lca%s
+D lca.adb		20201130081906 d80320d2 lca%b
+D sda_exceptions.ads	20201129111956 58fab764 sda_exceptions%s
+D system.ads		20200819050648 32a08138 system%s
+D s-assert.ads		20200819050646 cd8d2c94 system.assertions%s
+D s-atocou.ads		20200819050646 b45c2d8d system.atomic_counters%s
+D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050646 078245e4 system.file_control_block%s
+D s-finmas.ads		20200819050646 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200819050646 4ff27390 system.finalization_root%s
+D s-imgint.ads		20200819050646 02dbe0c2 system.img_int%s
+D s-memory.ads		20200819050646 597d6634 system.memory%s
+D s-parame.ads		20200819050648 4752c4cb system.parameters%s
+D s-pooglo.ads		20200819050648 ede33ef8 system.pool_global%s
+D s-secsta.ads		20200819050648 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050648 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050648 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+D s-stalib.adb		20200819050648 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200819050648 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200819050648 e9fa2dd8 system.storage_pools%s
+D s-stposu.ads		20200819050648 e251976f system.storage_pools.subpools%s
+D s-stratt.ads		20200819050648 9a2744e9 system.stream_attributes%s
+D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
+D th.ads		20201130110630 6f9ec678 th%s
+D th.adb		20201130152818 540c53a2 th%b
+D th_sujet.adb		20201130110620 6673b349 th_sujet%b
+G a e
+G c Z b b [th_sujet standard 6 11 none]
+G r i none [th_sujet standard 6 11 none] [lca standard 9 9 none]
+G r i none [th_sujet standard 6 11 none] [th standard 11 9 none]
+X 1 ada.ads
+16K9*Ada 20e8 48|1r6 1r33 2r6 2r33
+X 9 a-string.ads
+16K13*Strings 35e16 48|2r10 2r37
+X 11 a-strunb.ads
+82K21*Unbounded 758e26 48|2w18 2r45
+87R9*Unbounded_String<5|43R9> 741e14 48|9r31 16r7 19r41
+92V13*Length{natural} 48|11s14
+103V13*To_Unbounded_String{87R9} 48|35s22 36s22 37s22 38s22 39s22 40s22 41s22
+116V13*To_String{string} 48|23s12
+X 13 a-textio.ads
+57K13*Text_IO 727e16 48|1w10 1r37
+465U14*Put 48|22s7 23s7 24s7 25s7 26s7
+X 19 lca.ads
+11P9 T_Lca
+X 22 system.ads
+67M9*Address
+X 31 s-memory.ads
+53V13*Alloc{22|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{22|67M9} 105i<c,__gnat_realloc>22
+X 38 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+X 46 th.ads
+11k9*Th 37e7 48|4w6 15r33
+13A9 T_Th(19|11P9[32[48|15]]) 48|32r24[15]
+15U14 Initialiser 48|34s4[15]
+16U14 Enregistrer 48|35s4[15] 36s4[15] 37s4[15] 38s4[15] 39s4[15] 40s4[15]
+. 41s4[15]
+27u14 Pour_Chaque 48|29r52[15]
+X 48 th_sujet.adb
+6U11*Th_Sujet 6b11 43l5 43t13
+7i4 Longueur{integer} 11r31 16r34
+9V13 Hachage{integer} 9b13 9>22 12l8 12t15 16r44
+9r22 Cle{11|87R9} 11r22
+15K12 Table_Hachage[46|11] 17r8 29r38 32r10
+19U14 Afficher_Cellule 19b14 19>32 19>59 27l8 27t24 30r7
+19r32 Cle{11|87R9} 23r23
+19i59 Donnee{integer} 25r27
+29U14 Afficher_Tableau[46|27] 42s4
+32a4 Tab{46|13A9[15]} 34m17 35m17 35r17 36m17 36r17 37m17 37r17 38m17 38r17
+. 39m17 39r17 40m17 40r17 41m17 41r17 42r22
+

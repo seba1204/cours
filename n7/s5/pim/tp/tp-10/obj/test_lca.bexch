@@ -1,0 +1,21 @@
+[GENERATED OBJECT FILE]
+b__test_lca.o
+[PROJECT FILES]
+C:\users\chap\repos\pim\tp10\tp10.gpr
+20201130111300 38a395c0d8294b9aa44c097c91edf5b3
+[BOUND OBJECT FILES]
+C:\users\chap\repos\pim\tp10\obj\sda_exceptions.o
+C:\users\chap\repos\pim\tp10\obj\lca.o
+C:\users\chap\repos\pim\tp10\obj\test_lca.o
+[GENERATED SOURCE FILES]
+b__test_lca.ads
+b__test_lca.adb
+b__test_lca.ali
+[RESULTING OPTIONS]
+-LC:\users\chap\repos\pim\tp10\obj\
+-LC:\users\chap\repos\pim\tp10\obj\
+-LC:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2020/lib/gcc/x86_64-pc-mingw32/9.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000
