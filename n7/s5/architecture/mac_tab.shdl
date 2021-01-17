@@ -1,0 +1,5 @@
+module max_tab(rst, clk, cal, ad_1[7..0], ad_2[7..0] : max[31..0], ad_max[7..0], INITAD, INITMAX, MAJMAX, FINI)
+    $ram_aread_swrite(clk, write, ad_cour[7..0], max[31..0]: data_out[31..0])
+    cal_max(rst, clk, cal, ad_1[7..0], ad_2[7..0], data_out[31..0] : ad_cour[7..0],max[31..0], ad_max[7..0], INITAD, INITMAX, MAJMAX, FINI)
+    write = 0
+end module

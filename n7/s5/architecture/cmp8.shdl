@@ -1,0 +1,4 @@
+module cmp8(a[7..0], b[7..0]: usup, ssup, equ)
+	ucmp8(a[7..0], b[7..0]: usup, equ)
+   ssup = /a[7] * b[7] + a[7] * b[7] * usup + /a[7] * /b[7] * usup
+end module

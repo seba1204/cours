@@ -1,0 +1,8 @@
+module etats_tri_tab(rst, clk, cal, fin_max, fin_tab : INIT, CALMAX, COPY, WRITECOPY, WRITEMAX, FINI)
+	INIT := /cal on clk set when rst
+   CALMAX := cal*INIT + WRITEMAX*cal*/fin_tab + cal*CALMAX*/fin_max on clk reset when rst
+	COPY := cal * CALMAX * fin_max on clk reset when rst
+   WRITECOPY := COPY on clk, reset when rst
+   WRITEMAX := WRITECOPY on clk, reset when rst
+	FINI := cal*WRITEMAX*fin_tab + FINI*cal on clk reset when rst
+end module

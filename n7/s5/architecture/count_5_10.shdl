@@ -1,0 +1,12 @@
+module count_5_10(rst, clk, en: c[3..0])
+   adix = c[3]*/c[2]*c[1]*/c[0]
+   azero = /c[3]*/c[2]*/c[1]*/c[0]
+   
+	init = azero + adix
+	count_init4(rst, clk, en, init, b[3..0]: c[3..0])
+   
+   b[3] = /adix*0 + adix*1
+   b[2] = /adix*1 + adix*0
+   b[1] = /adix*0 + adix*1
+   b[0] = /adix*1 + adix*0
+end module

@@ -1,0 +1,10 @@
+module count_pair_impair(rst, clk, en, p : c[3..0])
+	
+   // avec des bascules T
+	
+	c[3..0] := /t[3..0]*c[3..0]+t[3..0]*/c[3..0] on clk, reset when rst, enabled when en
+	t[0] = /c[0]*/p + c[0]*p
+	t[1] = /p*c[0] + p
+	t[2] = c[1]
+	t[3] = c[2]*c[1]
+end module

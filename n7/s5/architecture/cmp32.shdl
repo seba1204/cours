@@ -1,0 +1,4 @@
+module cmp32(a[31..0], b[31..0]: usup, ssup, equ)
+	ucmp32(a[31..0], b[31..0]: usup, equ)
+   ssup = /a[31] * b[31] + a[31] * b[31] * usup + /a[31] * /b[31] * usup
+end module

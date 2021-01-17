@@ -1,0 +1,7 @@
+module ucmp2(a[1..0], b[1..0], sup, equ)
+	ucmp1(a[0], b[0], s0, e0)
+	ucmp1(a[1], b[1], s1, e1)
+   
+   sup = s1 + e1 * s0
+   equ = e0 * e1
+end module

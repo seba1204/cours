@@ -1,0 +1,10 @@
+module count_pair_impair_2(rst,clk,en,p: s[2..0])
+
+	// avec des bascules D (comme vu en TD)
+
+   s[2..0] := d[2..0 ] on clk, reset when rst, enabled when en
+   d[0] = /p
+   d[1] = /s[1]*p + /s[0]*s[1]*/p + s[0]*/s[1]
+   d[2] = /s[1]*s[2] + s[1]*/s[2]*p + s[0]*s[1]*/s[2] + /s[0]*s[2]*/p
+   
+end module

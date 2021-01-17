@@ -1,0 +1,7 @@
+module count4(rst,clk,en : s[3..0])
+	s[3..0 ] := /t[3..0]*s[3..0 ]+t[3..0]*/s[3..0 ] on clk, reset when rst, enabled when en
+   t[0] = 1
+   t[1] = s[0]
+   t[2] = s[0] * s[1]
+   t[3] = s[0] * s[1] * s[2]
+end module

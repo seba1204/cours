@@ -1,0 +1,7 @@
+module ucmp32(a[31..0], b[31..0], sup, equ)
+	ucmp16(a[15..0], b[15..0], s0, e0)
+	ucmp16(a[31..16], b[31..16], s1, e1)
+   
+   sup = s1 + e1 * s0
+   equ = e0 * e1
+end module

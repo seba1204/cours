@@ -1,0 +1,8 @@
+module tri_tab (rst, clk, cal, ad1[7..0], ad2[7..0] : etat[5..0], calMax, etat_max[3..0], finMax, max[31..0], adMax[7..0], adCour[7..0], adRam[7..0], wRam, inRam[31..0], outRam[31..0])
+	INIT = etats[1]
+	CALMAX = etats[1]
+	COPY = etats[1]
+	INIT = etats[1]
+	INIT = etats[4]
+	INIT = etats[1]
+end module

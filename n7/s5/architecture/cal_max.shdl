@@ -1,0 +1,11 @@
+module cal_max(rst, clk, cal, ad1[7..0], ad2[7..0], data[31..0] : adCour[7..0],max[31..0], adMax[7..0], InitAd, InitMax, CalMax, Fini)
+   etats_cal_max(rst, clk, cal, fin_tab : InitAd, InitMax, CalMax, Fini)
+   count8_b1_b2(rst, clk, en_count, InitAd, ad1[7..0], ad2[7..0] : adCour[7..0])
+   en_count = CalMax*cal*/fin_tab + InitMax*cal*/fin_tab
+   ucmp8(adCour[7..0], ad2[7..0] : sup_ad, eq_ad)
+   fin_tab = eq_ad + sup_ad
+   reg_32(rst, clk, en_max, data[31..0] : max[31..0])
+   reg8_T(rst, clk, en_max, adCour[7..0] : adMax[7..0])
+   ucmp32(max[31..0], data[31..0] : sup_max, eq_max)
+   en_max = InitMax*cal + CalMax*/sup_max*cal
+end module

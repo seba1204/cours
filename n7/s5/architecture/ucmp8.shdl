@@ -1,0 +1,7 @@
+module ucmp8(a[7..0], b[7..0], sup, equ)
+	ucmp4(a[3..0], b[3..0], s0, e0)
+	ucmp4(a[7..4], b[7..4], s1, e1)
+   
+   sup = s1 + e1 * s0
+   equ = e0 * e1
+end module

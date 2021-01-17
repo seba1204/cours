@@ -1,0 +1,7 @@
+module reg_32(rst, clk, en, e[31..0]:sr[31..0])
+
+	// implémentation simple avec basucles D
+   
+	sr[31..0] := d[31..0] on clk, reset when rst, enabled when en
+   d[31..0] = e[31..0]
+end module
