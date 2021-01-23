@@ -27,7 +27,10 @@
 
 \usepackage{blkarray} % pour les matrices décorées
 \usepackage{graphicx} % pour les images
-
+\usepackage{hyperref} % pour les hyperliens
+\usepackage{caption}% pour des images cote à cote
+\usepackage{subcaption} % pour des images cote à cote
+\usepackage{float} % pour placer les images au bon endroit
 \newcommand{\Author}{PARAIN Félix et PONT Sébastien}
 \newcommand{\Date}{22 Janvier 2021}
 \newcounter{annexecounter}
@@ -36,6 +39,50 @@
   \stepcounter{annexecounter}
   \subsection{Annexe \Alph{annexecounter}  : #1}
 }
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
+
+\renewcommand{\lstlistingname}{Code}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Liste des \lstlistingname s}% List of Listings -> List of Algorithms
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.93 0.94 0.95}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,    
+    captionpos=b,                    
+    keepspaces=true,
+    morekeywords={project},
+    numbers=left,                    
+    numbersep=5pt,
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=Matlab,
+    frame=single,
+    rulecolor=\color{black}
+}
+
+\lstset{style=mystyle}
+
+% \let\clearpage\relax
+
 
 \title{
     \vspace{-1.5cm}
@@ -52,29 +99,28 @@
 \definecolor{Blue}{RGB}{41, 128, 185}
 \definecolor{Purple}{RGB}{155, 89, 182}
 \definecolor{DarkBlue}{RGB}{44, 62, 80}
-\newtcolorbox{result}{
-    before=\par\smallskip\centering,
-    after=\par,
-    hbox,
-    colframe=Green,
-    colback=green!5,
-    }
 
 \titleformat{\section}
   {\normalfont\Large\bfseries\color{Red}}
   {\thesection .}
   {1em}
   {#1}
-  [{\titlerule[0.8pt]}]
+  [{\titlerule[0.9pt]}]
 
 \titleformat{\subsection}
   {\normalfont\bfseries\color{Blue}}
-  {\thesection.\thesubsectionsection.}
+  {\thesubsection.}
   {1em}
   {#1}
-  [{\titlerule[0.8pt]}]
+  [{\titlerule[0.7pt]}]
 
-\def\thesubsectionsection{\arabic{subsection}}
+\titleformat{\subsubsection}
+  {\normalfont\color{Blue}}
+  {\thesubsubsection.}
+  {1em}
+  {#1}
+  [{\titlerule[0.4pt]}]
+
 
 \pagestyle{fancy}
 
@@ -90,28 +136,18 @@
 
 \fancypagestyle{plain}{}
 
-
-\newcommand{\executeiffilenewer}[3]{%
-\ifnum\pdfstrcmp{\pdffilemoddate{#1}}%
-{\pdffilemoddate{#2}}>0%
-{\immediate\write18{#3}}\fi%
-}
-\newcommand{\includesvg}[1]{%
-\executeiffilenewer{#1.svg}{#1.pdf}%
-{inkscape -D #1.svg -o #1.pdf --export-latex}%
-\input{#1.pdf_tex}%
-}
-
 \begin{document}
 
 \maketitle
 
 \tableofcontents
 \listoffigures
+\lstlistoflistings
 \newpage
-
-\input{partie-1/main}
-\input{partie-2/main}
-\input{annexes/main}
+\input{partie-1/main.tex}
+\input{partie-2/main.tex}
+\input{partie-3/main.tex}
+\input{partie-4/main.tex}
+\newpage
 
 \end{document}
