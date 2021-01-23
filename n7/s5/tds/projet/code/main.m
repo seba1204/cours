@@ -1,211 +1,171 @@
-% To display figure on my 2nd screen
+%% Constantes
+F0 = 6000; % en Hz
+F1 = 2000; % en Hz
+Fe = 48000; % Frequence echantillonnage (Hz)
+Debit = 300; % en bits/s
+Ordre = 101; % ordre du filtre
+K = 11; % seuil d'énergie déterminé expérimentalement
+
+Donnee = 'Aleatoire'; % 'Image' OU 'Aleatoire'
+Numero_Image = 1; % choisir quelle image charger
+Nb_bit = 100; % Si 'Aleatoire', définir nb de bit voulu
+%%
+
+%% Code
+
+if strcmp(Donnee, 'Image')
+    load './ressources/DonneesBinome' + Numero_Image + '.mat'
+    Donnees = bits;
+    Nb_bit = length(Donnees);
+elseif strcmp(Donnee, 'Aleatoire')
+    % Données aléatoires
+    Donnees = randi([0, 1], 1, Nb_bit);
+end
+
+% Pour afficher les images sur mon deuxième écran
 figure('units', 'normalized', 'outerposition', [-1 0 1 1])
 
-% Données pour l'image
-% Nb_bit = 84000;
-% Donnee = bits;
-F0 = 1180;
-F1 = 980;
-
-% Données aléatoires
-Nb_bit = 100;
-Donnee = randi([0, 1], 1, Nb_bit);
-% F0 = 6000;
-% F1 = 2000;
-debit = 300;
+%% Constantes nécessaire pour la suite.
+m = 4; n = 5; % nombre de lignes et colonnes des figures
 Ts = 1 / debit;
-Fe = 48000; Te = 1 / Fe;
+Te = 1 / Fe;
 Ns = round(Ts / Te);
 NRZ = kron(Donnee, ones(1, Ns));
 t = (0:Te:(Ns * Nb_bit - 1) * Te);
-plot(t, NRZ, 'LineWidth', 2, 'Color', [0.20 0.29 0.37]);
-axis([0 0.333 -0.1 1.1])
-title('Signal NRZ généré au cours du temps')
-xlabel('Temps (s)')
-ylabel('Signal NRZ')
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-ax = gca;
-ax.XAxis.MinorTick = 'on';
-ax.XAxis.MinorTickValues = 0:Ts:(Ns * Nb_bit - 1) * Te;
-ax.XMinorGrid = 'on';
-ax.MinorGridAlpha = 0.7;
 
-periodogram(NRZ, [], length(NRZ), 1 / Ts)
-% subplot(4,2,1), plot(t,NRZ);
+%% Affichage du signal NRZ (pour avoir une grille)
+% plot(t, NRZ, 'LineWidth', 2, 'Color', [0.20 0.29 0.37]);
+% axis([0.004 0.01 -1.05 1.05])
+% xlabel('Temps (s)')
+% Affichage de la grille
+% ax = gca;
+% ax.XAxis.MinorTick = 'on';
+% ax.XAxis.MinorTickValues = 0:Ts:(Ns * Nb_bit - 1) * Te;
+% ax.XMinorGrid = 'on';
+% ax.MinorGridAlpha = 0.7;
 
+% Affichage de la DSP par periodogramme
+% periodogram(NRZ, [], length(NRZ), 1 / Ts)
+
+%% Génération du signal x
 phi0 = rand * 2 * pi;
 phi1 = rand * 2 * pi;
 x = (1 - NRZ) .* cos(2 * pi * F0 * t + phi0) + NRZ .* cos(2 * pi * F1 * t + phi1);
-subplot(4, 2, 1), title("x"), plot(t, x); hold on
-
-plot(t, x, 'LineWidth', 2, 'Color', [0.18 0.80 0.44]);
+subplot(m, n, 1), plot(t, x, 'LineWidth', 2, 'Color', [0.18 0.80 0.44], 'DisplayName', 'x(t)'); hold on;
+plot(t, NRZ, 'LineWidth', 2, 'Color', [0.20 0.29 0.37], 'DisplayName', 'NRZ');
 title('Signal modulé en fréquence')
 xlabel('Temps (s)')
-ylabel('Signal')
 axis([0.004 0.01 -1.05 1.05])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
 
-plot(t, changem(NRZ, -1, 0), 'r')
-
-%bruit :
+% Ajout de bruit
 Px = mean(abs(x).^2); % puissance du signal
 SNRdb = 50; % rapport signal sur bruit
 Pb = Px / (10^(SNRdb / 10)); % puissance du bruit
 x = x + Pb * randn(1, Ns * Nb_bit);
-plot(t, x, 'LineWidth', 2, 'Color', [0.09 0.63 0.52]);
+subplot(m, n, 2), plot(t, x, 'LineWidth', 2, 'Color', [0.09 0.63 0.52], 'DisplayName', 'x(t)'); hold on;
+plot(t, NRZ, 'LineWidth', 2, 'Color', [0.20 0.29 0.37], 'DisplayName', 'NRZ');
 title('Signal bruité')
 xlabel('Temps (s)')
-ylabel('Signal')
-axis([0 0.05 -2.5 2.5])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-subplot(4, 2, 2), plot(t, x);
+axis([0.004 0.01 -1.05 1.05])
 
-%% filtre passe bas :
-
-Fc = 1000;
-Ordre = 101;
+%% Filtres
+Fc = int8(min([F0 F1]) + abs(F0 - F1) / 2);
 Retard = (Ordre - 1) / 2;
 
-h = 2 * Fc * Te * sinc(2 * Fc * Te * (-Retard:Retard));
-H = fft(h);
-subplot(4, 2, 3), plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H)));
+%% Filtre passe bas
+h_bas = 2 * Fc * Te * sinc(2 * Fc * Te * (-Retard:Retard));
+H_bas = fft(h_bas);
 
-plot(2 * Fc * Te * (-Retard:Retard), h, 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+% Reponse impulsionnelle
+subplot(m, n, 6), plot(2 * Fc * Te * (-Retard:Retard), h_bas, 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
 title('Réponse impulsionnelle du filtre passe-bas')
 xlabel('Temps (s)')
 axis([-10 10 -0.05 0.2])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
 
-plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H)), 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
-xline(4500, 'r--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
-xline(-4500, 'r--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
+% Reponse fréquentielle
+subplot(m, n, 7), plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H_bas)), 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+xline(Fc, '--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
+xline(-Fc, '--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
 title('Réponse fréquentielle du filtre passe-bas')
 xlabel('Fréquence (Hz)')
-ylabel('')
 axis([-8000 8000 0 1.12])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
 
-psdx = (1 / (Fe)) * abs(fft(x)).^2;
+% DSP
+DSP_x = (1 / (Fe)) * abs(fft(x)).^2;
 freq = 0:Fe / N:Fe - 1;
-plot(freq, psdx, 'r', 'DisplayName', 'DSP de x(t)', 'LineWidth', 2, 'Color', [0.09 0.63 0.52 0.5])
-hold on;
-plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H)), 'DisplayName', 'Filtre', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+subplot(m, n, 9), plot(freq, DSP_x, 'r', 'DisplayName', 'DSP de x(t)', 'LineWidth', 2, 'Color', [0.09 0.63 0.52 0.5]); hold on;
+plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H_bas)), 'DisplayName', 'Filtre', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
 title('Réponse fréquentielle du filtre passe-bas')
 xlabel('Fréquence (Hz)')
-ylabel('')
 axis([0 7000 0 1.12])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-legend
 
-y_prov = filter(h, 1, [x zeros(1, Retard)]);
-y = y_prov(Retard + 1:end);
-plot(t, y, 'DisplayName', 'Signal filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]); hold on
+% Sortie du filtre
+y_bas_retarde = filter(h, 1, [x zeros(1, Retard)]);
+y_bas = y_bas_retarde(Retard + 1:end);
+subplot(m, n, 10), plot(t, y_bas, 'DisplayName', 'Signal filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]); hold on
 plot(t, NRZ, 'DisplayName', 'NRZ', 'LineWidth', 2, 'Color', [0.17 0.24 0.31])
 title('Signal filtré')
 xlabel('Temps (s)')
-ylabel('')
 axis([0.006 0.028 -1.1 1.1])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-legend
 
-% ------
-psdy = (1 / (Fe)) * abs(fft(y)).^2;
-freq = 0:Fe / N:Fe - 1;
-plot(freq, psdy, 'r', 'DisplayName', 'DSP de x(t) filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73])
-title('DSP du signal filtré')
+% DSP de la sortie du filtre
+DSP_y_bas = (1 / (Fe)) * abs(fft(y_bas)).^2;
+subplot(m, n, 11), plot(freq, DSP_y_bas, 'r', 'DisplayName', 'DSP de x(t) filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73])
+title('DSP du signal filtré en passe bas')
 xlabel('Fréquence (Hz)')
-ylabel('')
 axis([0 7000 0 160])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-% ------
-% ---------------------------------------------------------------------------
-h2 = -h;
-h2(Retard) = 1 - Fc / Fe;
-H2 = fft(h2);
-y2_prov = filter(h2, 1, [x zeros(1, Retard)]);
-y2 = y2_prov(Retard + 1:end);
 
-plot(2 * Fc * Te * (-Retard:Retard), h2, 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+%% Filtre passe haut
+h_haut = -h_bas;
+h_haut(Retard) = 1 - Fc / Fe;
+H2_haut = fft(h_haut);
+
+% Reponse impulsionnelle
+subplot(m, n, 6), plot(2 * Fc * Te * (-Retard:Retard), h_haut, 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
 title('Réponse impulsionnelle du filtre passe-haut')
 xlabel('Temps (s)')
-axis([-6.5 6.5 -0.2 1.12])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
+axis([-10 10 -0.05 0.2])
 
-plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H2)), 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
-xline(4500, 'r--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
-xline(-4500, 'r--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
+% Reponse fréquentielle
+subplot(m, n, 7), plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H_haut)), 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+xline(Fc, '--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
+xline(-Fc, '--', 'Fc', 'LineWidth', 2, 'Color', [0.75 0.22 0.17]);
 title('Réponse fréquentielle du filtre passe-haut')
 xlabel('Fréquence (Hz)')
-ylabel('')
-axis([-6500 6500 0 1.12])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
+axis([-8000 8000 0 1.12])
 
-psdx = (1 / (Fe)) * abs(fft(x)).^2;
-freq = 0:Fe / N:Fe - 1;
-plot(freq, psdx, 'r', 'DisplayName', 'DSP de x(t)', 'LineWidth', 2, 'Color', [0.09 0.63 0.52 0.5])
-hold on;
-plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H2)), 'DisplayName', 'Filtre', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
+% DSP
+subplot(m, n, 9), plot(freq, DSP_x, 'r', 'DisplayName', 'DSP de x(t)', 'LineWidth', 2, 'Color', [0.09 0.63 0.52 0.5]); hold on;
+plot(linspace(-Fe / 2, Fe / 2, Ordre), fftshift(abs(H_haut)), 'DisplayName', 'Filtre', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]);
 title('Réponse fréquentielle du filtre passe-haut')
 xlabel('Fréquence (Hz)')
-ylabel('')
 axis([0 7000 0 1.12])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-legend
 
-plot(t, y2, 'DisplayName', 'Signal filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]); hold on
+% Sortie du filtre
+y_haut_retarde = filter(h_haut, 1, [x zeros(1, Retard)]);
+y_haut = y_haut_retarde(Retard + 1:end);
+subplot(m, n, 10), plot(t, y_haut, 'DisplayName', 'Signal filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73]); hold on
 plot(t, NRZ, 'DisplayName', 'NRZ', 'LineWidth', 2, 'Color', [0.17 0.24 0.31])
-title('Signal filtré')
+title('Signal filtré en passe_haut')
 xlabel('Temps (s)')
-ylabel('')
-axis([0.006 0.028 -1.3 1.3])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-legend
+axis([0.006 0.028 -1.1 1.1])
 
-% ------
-psdy = (1 / (Fe)) * abs(fft(y2)).^2;
-freq = 0:Fe / N:Fe - 1;
-plot(freq, psdy, 'DisplayName', 'DSP de x(t) filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73])
-title('DSP du signal filtré')
+% DSP de la sortie du filtre
+DSP_y_haut = (1 / (Fe)) * abs(fft(y_haut)).^2;
+subplot(m, n, 11), plot(freq, DSP_y_haut, 'r', 'DisplayName', 'DSP de x(t) filtré', 'LineWidth', 2, 'Color', [0.16 0.50 0.73])
+title('DSP du signal filtré en passe_haut')
 xlabel('Fréquence (Hz)')
-ylabel('')
 axis([0 7000 0 160])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-% ------
 
-%détection d'énergie :
-K = 11; % seuil d'énergie à déteminer
-y_reshape = reshape(y, Ns, Nb_bit);
-X = sum(y_reshape.^2, 1);
+%% Détection d'énergie
+y_bas_r = reshape(y_bas, Ns, Nb_bit);
+X = sum(y_bas_r.^2, 1);
 Donnee_retrouve = X > K;
-plot(t, NRZ, 'DisplayName', 'Signal original', 'LineWidth', 2, 'Color', [0.17 0.24 0.31]); hold on
-plot(t, kron(Donnee_retrouve, ones(1, Ns)), 'DisplayName', 'Signal reconstruit', 'LineWidth', 2, 'Color', [0.56 0.27 0.68])
-title('Différence signal original / retrouvé')
-xlabel('Temps (s)')
-ylabel('')
-axis([0 0.35 -0.1 1.1])
-set(gca, 'FontSize', 20)
-set(gcf, 'position', [10, 10, 1275, 675])
-legend
 Nb_erreur = sum(Donnee ~= Donnee_retrouve);
-taux_erreur = Nb_erreur / Nb_bit
+taux_erreur = Nb_erreur / Nb_bit;
+fprintf('Taux d erreur du filtre passe bas : %1.f %', taux_erreur * 100);
 
-%% 3.4 Application de la recommandation V21
-% réponse question : oui, en modifiant Fc, et K
-
-%% 4.1 Démodulateur FSK - Contexte de synchronisation idéale
+%% Démodulateur FSK
 
 phi0 = rand * 2 * pi;
 phi1 = rand * 2 * pi;
@@ -221,16 +181,10 @@ X1 = sum(x1_reshape * Ts, 1);
 
 X2 = X1 - X0;
 Donnee_retrouve_2 = X2 > 0;
-subplot(4, 2, 8), plot(t, NRZ, 'r'); hold on
-plot(t, kron(Donnee_retrouve_2, ones(1, Ns)), 'b')
 
 Nb_erreur_2 = sum(Donnee ~= Donnee_retrouve_2);
 taux_erreur_2 = Nb_erreur_2 / Nb_bit;
-
-%% 4.2 Démodulateur FSK avec gestion d'une erreur de synchronisation de
-% phase porteuse
-% 1. en faisant les calculs de 4.1.1, simplification qui ne se simplifient
-% pas => X2 que négatif ou que positif
+fprintf('Taux d erreur du 1er démodulateur FSK : %1.f %', taux_erreur_2 * 100);
 
 x0c = x .* cos(2 * pi * F0 * t);
 x0s = x .* sin(2 * pi * F0 * t);
@@ -252,9 +206,11 @@ X1s = sum(x1s_reshape * Te, 1).^2;
 X2 = (X1c + X1s) - (X0c + X0s);
 
 Donnee_retrouve_3 = X2 > 0;
-subplot(4, 2, 8), plot(t, kron(Donnee_retrouve_3, ones(1, Ns)), 'g'); hold on
+fprintf('Taux d erreur du 1er démodulateur FSK : %1.f %', taux_erreur_3 * 100);
 
-Nb_erreur_3 = sum(Donnee ~= Donnee_retrouve_3);
-taux_erreur_3 = Nb_erreur_3 / Nb_bit;
+if strcmp(Donnee, 'Image')
+    reconstitution_image(Donnee_retrouve_3);
+end
 
-reconstitution_image(Donnee_retrouve_3);
+set(gca, 'FontSize', 20)
+legend
