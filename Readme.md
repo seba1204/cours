@@ -9,7 +9,7 @@ Repository of my programs made in class.
   - [2019-2020 (S3-S4)](https://github.com/seba1204/cours#-2019-2020-s3-s4)
 - [ENSEEIHT](https://github.com/seba1204/cours#enseeiht-n7)
   - [2020 (S5)](https://github.com/seba1204/cours#-2020-s5)
-  - [2021 (S6)](https://github.com/seba1204/cours#-2020-s6)
+  - [2021 (S6)](https://github.com/seba1204/cours#-2021-s6)
 
 ## Prepa
 
