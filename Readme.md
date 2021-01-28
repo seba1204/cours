@@ -119,7 +119,7 @@ Optimisation of mathematical problems (Least squares, ...)
 
 ### 📓 Programmation impérative
 
-Basic elements of imperative programming
+Basic elements of imperative programming throw Ada
 
 ### 📓 Probabilités
 
