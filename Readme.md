@@ -58,7 +58,7 @@ List of subjects:
 | [Environnement informatique](https://github.com/seba1204/cours#-environnement-informatique)      | ```env-info```     |
 | [Modélisation](https://github.com/seba1204/cours#-modélisation)                                  | ```modelisation``` |
 | [Optimisation](https://github.com/seba1204/cours#-optimisation)                                  | ```opti```         |
-| [Programmation Impérative](https://github.com/seba1204/cours#-programmation-mpérative)           | ```pim```          |
+| [Programmation Impérative](https://github.com/seba1204/cours#-programmation-impérative)          | ```pim```          |
 | [Probabilités](https://github.com/seba1204/cours#-probabilités)                                  | ```probas```       |
 | [Statistiques](https://github.com/seba1204/cours#-statistiques)                                  | ```stats```        |
 | [Traitement du signal](https://github.com/seba1204/cours#-traitement-du-signal)                  | ```tds```          |
