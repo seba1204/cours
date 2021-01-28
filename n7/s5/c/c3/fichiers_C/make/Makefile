@@ -1,19 +1,28 @@
+CC=c99
+CFLAGS=-Wextra -pedantic -c
+LDFLAGS=
+
+all: ephemeride edt clean
 ephemeride: date.o ephemeride.o
-	c99 date.o ephemeride.o -o ephemeride
+	$(CC) date.o ephemeride.o -o $@
+edt: cours.o salle.o date.o enseignant.o EDT.o
+	$(CC) date.o salle.o enseignant.o cours.o EDT.o -o $@
 
-date.o: date.c date.h
-	c99 -Wextra -pedantic -c date.c
-
-ephemeride.o: ephemeride.c
-	c99 -Wextra -pedantic -c ephemeride.c
+depend:
+	makedepend *.c -Y
+# date.o: date.c date.h
+# 	$(CC) $(CFLAGS) $<
+# ephemeride.o: ephemeride.c
+# 	$(CC) $(CFLAGS) $<
+# EDT.o: EDT.c cours.h salle.h date.h enseignant.h
+# 	$(CC) $(CFLAGS) $<
+# cours.o: cours.c cours.h salle.h date.h enseignant.h
+# 	$(CC) $(CFLAGS) $<
+# enseignant.o: enseignant.c enseignant.h date.h
+# 	$(CC) $(CFLAGS) $<
+# salle.o: salle.c salle.h date.h
+# 	$(CC) $(CFLAGS) $<
 
 clean:
-	rm *.o ephemeride
-# DO NOT DELETE
-
-EDT.o: cours.h salle.h date.h enseignant.h
-cours.o: cours.h salle.h date.h enseignant.h
-date.o: date.h
-enseignant.o: enseignant.h date.h
-ephemeride.o: date.h
-salle.o: salle.h date.h
+	rm *.o
+.PHONY: clean all

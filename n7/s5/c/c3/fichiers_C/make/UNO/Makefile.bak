@@ -1,0 +1,17 @@
+CC=c99
+CFLAGS=-Wextra -pedantic -c
+LDFLAGS=
+
+all: test_uno jouer_uno clean
+test_uno: uno.o
+	$(CC) uno.o -o $@
+jouer_uno: uno.o
+	$(CC) uno.o -o $@
+uno.o: carte.o main.o jeu.o
+	$(CC) date.o main.o jeu.o -o $@
+depend:
+	makedepend *.c -Y
+
+clean:
+	rm *.o
+.PHONY: clean all

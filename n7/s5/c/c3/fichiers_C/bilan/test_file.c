@@ -14,42 +14,41 @@
 #include <stdlib.h>
 #include <assert.h>
 
-int main ()
+int main()
 {
     File f;
     char val;
-    initialiser (&f);
+    initialiser(&f);
     assert(0 == longueur(f));
 
-
-    inserer (&f, 'O');
+    inserer(&f, 'O');
     assert(1 == longueur(f));
     assert('O' == tete(f));
 
-    inserer (&f, 'K');
+    inserer(&f, 'K');
     assert(2 == longueur(f));
     assert('O' == tete(f));
 
-    inserer (&f, '?');
+    inserer(&f, '?');
     assert(3 == longueur(f));
     assert('O' == tete(f));
 
-    extraire (&f, &val);
+    extraire(&f, &val);
     assert('O' == val);
     assert(2 == longueur(f));
     assert('K' == tete(f));
 
-    extraire (&f, &val);
+    extraire(&f, &val);
     assert('K' == val);
     assert(1 == longueur(f));
     assert('?' == tete(f));
 
-    extraire (&f, &val);
+    extraire(&f, &val);
     assert('?' == val);
     assert(0 == longueur(f));
 
-    // Tester l'ajout dans une file vidée
-    inserer (&f, 'Y');
+    // Tester l'ajout dans une file vidÃ©e
+    inserer(&f, 'Y');
     assert(1 == longueur(f));
     assert('Y' == tete(f));
 
