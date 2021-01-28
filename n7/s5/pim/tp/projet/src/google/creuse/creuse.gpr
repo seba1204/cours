@@ -1,0 +1,5 @@
+with "../../helpers/helpers";
+Project Creuse is
+    for Source_Dirs use (".");
+    for Object_Dir use "../../obj";
+end Creuse;

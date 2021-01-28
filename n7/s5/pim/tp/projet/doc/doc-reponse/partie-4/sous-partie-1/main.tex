@@ -1,0 +1,17 @@
+Nous n'avons pour l'instant pas pu faire des tests rigoureux, mais voilà ce que nous avions obtenu lors de nos tests : 
+\begin{dinglist}{111}
+   \item \lstinline{Google_Naive} avec un tableau dans la RAM:
+   \begin{itemize}
+      \item Le temps d'éxécution du fichier \lstinline{worm.net} durait environ 20 secondes.
+      \item Les fichiers \lstinline{brainlinks.net} et \lstinline{Linux26.net} ne peuvent pas être testés.
+   \end{itemize}
+   \item \lstinline{Google_Naive} avec enregistrement de fichiers :
+   \begin{itemize}
+      \item Le temps d'éxécution du fichier \lstinline{worm.net} durait environ 2 minutes.
+      \item Le fichier \lstinline{Linux26.net} générait des fichiers dépassant les 300 Go, et des temps d'éxécution dépassant les 6 heures (dus à la lecture sur disque).
+   \end{itemize}
+   \item \lstinline{Google_Creuse}
+   \begin{itemize}
+      \item Le temps d'éxécution du fichier \lstinline{brainlinks.net} était d'environ 5 minutes.
+   \end{itemize}
+\end{dinglist}

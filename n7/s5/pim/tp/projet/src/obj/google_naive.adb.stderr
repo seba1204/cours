@@ -1,2 +1,0 @@
-google_naive.adb:43:07: warning: variable "Ligne_Nulle" is never read and never assigned
-google_naive.adb:47:07: warning: variable "X" is never read and never assigned

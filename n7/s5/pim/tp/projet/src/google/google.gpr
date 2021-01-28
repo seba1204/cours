@@ -1,9 +1,0 @@
-with "../exceptions/exceptions";
-with "../helpers/helpers";
-with "../google_naive/google_naive";
-with "../google_creuse/google_creuse";
-
-project Google is
-    for Source_Dirs use (".");
-    for Object_Dir use "../obj";
-end Google;

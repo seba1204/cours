@@ -1,0 +1,36 @@
+\begin{dinglist}{111}
+   \item \textbf{Une table de hachage.}
+   $G$ doit maintenant être creuse, donc tous les $0$ ne sont pas pris en compte. Pour cela nous avons choisi d'implémenter une table de hachage :
+   \begin{lstlisting}[caption=Type de \lstinline{Google_Creuse}]
+-- Google_Creuse.ads
+...
+type Cellule is record 
+   Index: Integer;
+   Donnee: T_Donnee;
+   Suivant: Ptr_Cellule;
+end record;
+type Ligne is record 
+   Index: Integer;
+   Cellule: Ptr_Cellule;
+   Suivant: Ptr_Ligne;
+end record;
+type Th is array (Positive range <>) of Ptr_Ligne;
+type Table_Hachage(Size: Integer) is tagged record
+   Table : Th(1..Size);
+end record;
+
+...
+-- Google.adb
+declare
+   G : Google_Creuse (A.Taille_Hachage);
+   ...
+      \end{lstlisting}
+Nous avons donc un \lstinline{record Cellule} qui contient le coefficient de $G$. Tous les coefficients d'une ligne se rattachent l'un à l'autre (grâce à la propriété \lstinline{Suivant}).
+Chaque ligne est  \lstinline{record} contenant une \textit{grappe} de coefficients. Ces lignes elles-mêmes se suivent de la même manière.
+Enfin un tableau de taille relativement petite contient des lignes. La clé de hachage est l'index de la ligne. Ainsi, si la taille du tableau est $100$, et la taille du reseau est $1 000$, 
+alors, la première case du tableau contiendra les lignes d'index $0, 100, 200, 300, ..., 900$.
+   \item \textbf{Implémentation des fonctions.} Il est maintenant plus compliqué d'implémenter les fonctions que précédemment. Par exemple la fonction \lstinline{Inserer} doit insérer dans la bonne ligne si elle existe, et entre deux Cellules, si elles existent 
+   la valeur voule...
+   \item \textbf{Transposée.} Notons que pour le calcul des poids : $\pi^{T}_{k+1} = \pi^{T}_{k} \cdot G$, c'est la colonne de $G$ qui nous intéresse. C'est pourquoi, lors de la création de $G$,
+   nous calculons réellement sa transposée.
+\end{dinglist}

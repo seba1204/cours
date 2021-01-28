@@ -1,5 +1,5 @@
+with "google/p_google";
 with "helpers/helpers";
-with "google/google";
 
 project Pagerank is
     for Object_Dir use "obj";

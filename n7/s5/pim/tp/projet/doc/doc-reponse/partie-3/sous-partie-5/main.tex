@@ -1,0 +1,23 @@
+\begin{dinglist}{111}
+   \item \textbf{Un type \lstinline{array}.}
+     Comme demandé explicitement dans le sujet : << \lstinline{Google_Naive} definit et manipule une matrice G sous la forme d’un tableau de reels à deux dimensions statiques >>.
+     Nous somme donc obligé de faire un tableau de dimension $N \times N$ avec $N$ la taille du reseau. La dimension n'est pas à proprement parler \textit{statique}
+   car nous avons voulu que la dimension du tableau varie en fonction de $N$ : 
+   \begin{lstlisting}[caption=Type de \lstinline{Google_Naive}]
+-- Google_Naive.ads
+type G_N is array (Positive range <>, Positive range <>) of T_Float;
+type Google_Naive(Size: Positive) is new Google with record
+   Table : G_N(1..Size, 1..Size);
+end record;
+...
+-- Google.adb
+declare
+   G : Google_Naive (A.Taille_Reseau);
+   ...
+      \end{lstlisting}
+   \item \textbf{Implémentation des fonctions.} La surchage des fonctions de la classe mère \lstinline{Google} sont relativement simples : des boucles for imbriquées, et un accès aux données via \lstinline{Table(I,J)}.
+   \item \textbf{Mémoire.} La taille utilisée par cette matrice est rapidement très grande ($N^{2}$). Il n'est donc pas possible de traiter des fichiers reseaux trop gros avec ce type de matrice.
+   Nous avons codé une autre implémentation de la matrice << naïve >> en enregistrant son contenu au fur et à mesure dans un fichier, mais en la testant nous obtenions des fichiers de taille théorique dépassant les 300Go.
+   (Nous n'avons pas attendu la fin de l'exécution.) Nous avons jugé inutile de continuer dans cette voie, et de laisser une erreur Stack Overflow si le reseau est trop grand.
+   
+\end{dinglist}

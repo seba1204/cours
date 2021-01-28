@@ -1,1 +1,39 @@
-Voici un résumé du sujet. Pour plus de détail, se référer au \href{http://www.latex-tutorial.com}{sujet}.
+Voici un résumé du sujet. Pour plus de détail, se référer au \href{https://raw.githubusercontent.com/seba1204/cours/master/n7/s5/pim/tp/projet/doc/sujet.pdf}{sujet}.
+
+Un fichier représentant le reseau nous est donné. Voici un exemple :
+
+\lstinputlisting[caption=Fichier reseau exemple]{partie-1/sous-partie-3/exemple_fichier.txt}
+
+La ligne 1 nous indique le nombre de sites (internet) composant le reseau (ici 6).
+
+Chaque autre ligne est composé de deux nombres : 
+\begin{itemize}
+   \item le $1^{er}$ est le site référenceur (une de ses pages internet contient un lien vers le site référencé)
+   \item le $2^{nd}$ est le site référencé
+\end{itemize}
+
+Par exemple la $2^{\grave{e}me}$ ligne nous dit que le site \lstinline{0} fait référence aux sites \lstinline{1} et \lstinline{2}.
+
+Pour savoir quel est le site le plus populaire, il faut alors calculer le nombre de référencements.
+On peut répertorier tous ces liens dans une matrice en mettant en ligne les référenceurs et en colonne les référencés :
+\[
+   \begin{bmatrix}
+      0 & 1 & 1 & 0 & 0 & 0  \\
+      0 & 0 & 0 & 0 & 0 & 0  \\
+      1 & 1 & 0 & 0 & 1 & 0  \\
+      0 & 0 & 0 & 0 & 1 & 1  \\
+      0 & 0 & 0 & 1 & 0 & 1  \\
+      0 & 0 & 0 & 1 & 0 & 0  \\
+   \end{bmatrix}
+\]
+
+On retrouve bien à la $1^{\grave{e}re}$ ligne que le site \lstinline{0} fait référence aux sites \lstinline{1} et \lstinline{2}.
+
+Après quelques calculs (c.f. sujet) on retrouve une matrice $G_{\alpha}$ de paramètre $\alpha \in [0,1]$ qui permet de nuancer la popularité d'un site, et d'avoir des résultats plus proches de la réalité.
+Pour calculer les poids des sites $\pi$, il suffit alors de faire : 
+\[
+   \pi^{T}_{k+1} = \pi^{T}_{k} \cdot G
+\]
+avec $\pi$ le vecteur ligne contenant les poids des sites.
+
+Après $M$ iterations, le vecteur $\pi_{M}$ est une bonne représentation de la popularité des sites dans la réalité.

@@ -1,0 +1,28 @@
+La gestion des arguments (paramètres de la commandline \lstinline{./pagerank [parametres]}) se fait dans le module \lstinline{helpers}.
+\begin{dinglist}{111}
+   \item \textbf{Les différents paramètres possibles.}
+   \begin{itemize}
+      \item \lstinline{-P} : (Optionnel) Permet de choisir l'implémentation creuse de Google. Si cet argument n'est pas présent, c'est l'implémentation naïve qui est choisie.
+      \item \lstinline{-I} : (Optionnel) Doit être suivi d'un nombre entier positif. Permet de paramétrer le nombre d'iterations faites pour calculer les poids. Valeur par défaut : 150
+      \item \lstinline{-A} : (Optionnel) Doit être d'un réel. Le paramètre doit être un réel compris entre 0 et 1. Permet d'indiquer le paramètre alpha du la matrice Google.
+      \item \lstinline{-V} : (Optionnel) Active le mode verbeux. Si activé, toutes les étapes de calcul seront loguées dans la console.
+      \item \lstinline{-H} : (Optionnel) Affiche cet aide.
+      \item \lstinline{nomfichier.net} : (Obligatoire) La ligne de commande doit se terminer par le nom .net qui contient les liens entre les pages web. 
+   \end{itemize}
+   \item \textbf{Le type \lstinline{Args}.} Le type \lstinline{Args} est l'enregistrement suivant :
+\begin{lstlisting}[caption=Le type \lstinline{Args}]
+type T_Args is record 
+   Nom_Fichier    : Unbounded_String;
+   A              : Float    := 0.85;
+   Max_Iter       : Integer  := 150;
+   Est_Naif       : Boolean  := True;
+   Aide_Demande   : Boolean  := False;
+   Taille_Reseau  : Positive;
+end record;
+\end{lstlisting}
+   \item \textbf{Lecture des arguments.} La fonction \lstinline{Lire_Arguments} se charge de lire les arguments un par un, et à l'aide d'un
+   \lstinline{switch} détermine si un argument est présent ou non, et éventuellement sa valeur.
+   \item \textbf{Mode verbeux.} La fonction \lstinline{Log(Message);} par exemple, n'affiche le message que si le mode verbeux à été passé en paramètre lors du lancement du programme. De même la fonction 
+   \lstinline{Log_P(Progression, Maximum)} affiche une \textit{Progress Bar}.
+
+\end{dinglist}

@@ -1,0 +1,7 @@
+with "../helpers/helpers";
+with "creuse/creuse";
+with "naive/naive";
+Project P_Google is
+    for Source_Dirs use (".");
+    for Object_Dir use "../obj";
+end P_Google;

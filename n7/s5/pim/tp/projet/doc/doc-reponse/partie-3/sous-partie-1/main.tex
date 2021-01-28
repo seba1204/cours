@@ -1,0 +1,46 @@
+Nous avons choisi de coder avec une programmation défensive (avec des erreurs levées) pour plusieurs raisons :
+\begin{itemize}
+   \item On est sûr que toutes les erreurs sont prises en compte, tandis qu'avec une programmation offensive, nous ne sommes pas sûrs d'avoir prévu tous les cas possibles avec les Pre/Post conditions.
+   \item Il y a une gestion générale des erreurs, donc si une erreur Ada est levée, elle sera aussi gérée
+   \item Les autres langages de programmation ont plus souvent une approche défensive 
+\end{itemize}
+
+Voici comment nous avons procédé : 
+\begin{dinglist}{111}
+   \item Un module \lstinline{excpetions} définissant toutes les erreurs du projet :
+   \begin{lstlisting}[caption=Module Exceptions]
+package Exceptions is
+   ERREUR_Une_Erreur : Exception;
+   ERREUR_Argument_Manquant : Exception;
+   ERREUR_Mauvais_Parametre_Iteration : Exception;
+   ERREUR_Mauvais_Parametre_Alpha : Exception;
+   ERREUR_Mauvais_Parametre_Fichier : Exception;
+   Erreur_Mauvais_Parametre_Taille_Reseau : Exception;
+   Erreur_Mauvais_Parametre_Taille_Memoire : Exception;
+   Erreur_Mauvais_Parametre_Taille_Hachage : Exception;
+   ERREUR_Fichier_Manquant : Exception;
+   ERREUR_Lire_Args : Exception;
+   ERREUR_Lecture_Taille : Exception;
+   ERREUR_Capacite_Max_Depassee : Exception;
+end Exceptions;  
+   \end{lstlisting}
+   Ce module est importé dans tous les autres modules du projet
+   \item Lorsqu'une erreur est détectée, nous la levons avec une message explicatif
+   \begin{lstlisting}[caption=Levée d'une exception]
+...
+raise Nom_Erreur with "Message a transmettre a l'utilisateur.";
+...
+   \end{lstlisting}
+   \item Toutes les erreurs sont propagées au programme principal \lstinline{pagerank.adb} qui les affiche :
+   \begin{lstlisting}[caption=Gestion des exceptions]
+function Pagerank return Integer is
+...
+begin
+...
+exception
+   when E : others =>
+      Ada.Text_IO.Put_Line (Exception_Message (E));
+      return 1;
+end Pagerank;
+   \end{lstlisting}
+\end{dinglist}

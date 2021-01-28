@@ -1,0 +1,91 @@
+Notre programme principal se veut le plus léger possible (c'est notamment pour ça que nous avons fait un module \lstinline{helpers}), tout en implémentant le code.
+
+\begin{dinglist}{111}
+   \item Définition de la fonction \lstinline{pagerank} :
+      \begin{lstlisting}[caption=Définition de \lstinline{pagerank}]
+---------------- CONSTANTES ----------------
+Nb_Digit     : constant Integer := 3;
+--------------------------------------------
+
+type T_Float is digits Nb_Digit;
+
+package Matrice_Google is new Google (T_Float);
+use Matrice_Google;
+
+A : Args;
+      \end{lstlisting}
+      
+      Nous n'avons malheureusement pas réussi à faire passer la constante \lstinline{Nb_Digit} en variable potentiellement modifiable en définissant un paramètre de plus dans la commandline (\lstinline{./pagerank -P test.net}).
+      Elle est donc écrite \textit{en dur} dans le programme.
+      
+      \lstinline{Args} est un type défini dans le module \lstinline{helpers} importé au début du fichier.
+   \item \textbf{Astuce de la fonction.} Jusqu'ici tous nos programmes principaux étaient des procédures. Nous avons choisi d'en faire une fonction. De cette manière nous pouvons exécuter \lstinline{return 0;} à tout moment pour stopper la fonction.
+   Cela est utile car nous avons rajouté la possibilité de passer le paramètre \lstinline{-h} à la commandline qui affiche l'aide. Si l'aide est affichée, nous ne voulons pas que le programme s'exécute, mais nous ne trouvions pas \textit{joli} 
+   d'avoir tout le code principal englobé dans un \lstinline{if}. Voici donc l'\textit{astuce} :
+   \begin{lstlisting}[caption=Astuce de la fonction principale]
+function Pagerank return integer is
+...
+
+   A : Args;
+begin
+
+   -- Lecture des arguments
+   A := Lire_Arugments;
+
+   -- Si on a affiche l'aide, on ne fait rien d'autre
+   if A.Aide_Demande then
+      return 0;
+   end if;
+
+   -- Suite du code
+   ...
+
+   -- Fin
+   return 0;
+
+exception
+   when E : others =>
+      Ada.Text_IO.Put_Line (Exception_Message (E));
+      return 1;
+end Pagerank;
+   \end{lstlisting}
+
+   \item \textbf{Contenu du code principal.}
+   \begin{lstlisting}[caption=Contenur du programme principal]
+...
+declare
+   G : Google'Class := Initialiser(A);
+   P : Poids(1..A.Taille_Reseau);
+begin
+   -- Initialiser la matrice Google
+   -- Initialiser le tableau des poids
+   -- Lire le fichier reseau
+   ...
+   while not End_Of_File (Fichier_Net) loop
+      Get (Fichier_Net, Referenceur);
+      Get (Fichier_Net, Destinataire);
+      C := C + Octets(Referenceur) + Octets(Destinataire) + 2;
+      G.Inserer(Referenceur, Destinataire, Un);
+      Tampon.Ajouter(Referenceur, Un);
+      Log_P(C, Taille_Fichier);
+   end loop;
+   ...
+   -- Calculer les coefficients de la matrice Google
+   -- Calculer les poids par iteration
+   -- Trier les poids
+   -- Exporter les poids dans les fichiers
+
+end;
+         \end{lstlisting}
+      Pour voir l'intégralité du code, se référer au fichier \href{https://raw.githubusercontent.com/seba1204/cours/master/n7/s5/pim/tp/projet/src/pagerank.adb}{\lstinline{pagerank.adb}}.\\
+      Nous n'avons pas copié tout le code du programme principal, mais nous avons laissé un bout du code pour vous montrer comment nous gérons les deux implémentations creuses et naives. Nous pouvons voir à la ligne 3 que \lstinline{G} est du type \lstinline{Google'Class}.
+      En effet, la fonction \lstinline{Initialiser(A)} renvoie une classe : soit \lstinline{Google_Naive}, soit \lstinline{Google_Creuse} en fonction des arguments \lstinline{A} qui est un enregistrement, 
+      tel que \lstinline{A.Est_Naif} est un \lstinline{Boolean} vrai si l'implémentation dite naïve a été choisie. \\
+      Analysons maintenant la ligne 14 : la fonction \lstinline{Inserer(I, J, Valeur)} dépend de la classe de \lstinline{G} (\lstinline{Google_Naive}/\lstinline{Google_Creuse}), et son implémentation est différente : 
+      \begin{itemize}
+         \item Un simple \lstinline{Table(I, J) := Valeur;} pour la version naïve
+         \item Un programme plus complexe pour la version creuse
+      \end{itemize}
+
+      De cette manière nous pouvons écrire l'intégralité du code une seule fois, et pour les parties spécifiques à la gestion des matrices $G$, nous avons un code différent selon le type d'implémentation.
+\end{dinglist}

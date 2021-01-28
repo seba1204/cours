@@ -2,33 +2,37 @@ with Exceptions;            use Exceptions;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Command_Line;      use Ada.Command_Line;
 with Ada.Text_IO;           use Ada.Text_IO;
+with Ada.Float_Text_IO;     use Ada.Float_Text_IO;
+with Ada.Integer_Text_IO;   use Ada.Integer_Text_IO;
+with Ada.Real_Time; use  Ada.Real_Time; -- pour le temps d'exécution
 
 package Helpers is
-
-   type T_Double is digits 3;
-
-   function "+" (Item : in String) return Unbounded_String;
+   Verbeux : Boolean := False;
+   Matlab : Boolean := False;
+   type Args is record 
+      Nom_Fichier    : Unbounded_String;
+      A              : Float    := 0.85;
+      Max_Iter       : Integer  := 150;
+      Est_Naif       : Boolean  := True;
+      Aide_Demande   : Boolean  := False;
+      Taille_Hachage : Positive := 100;
+      Taille_Reseau  : Positive;
+   end record;
    function "-" (Item : in String) return Integer;
-   function "&" (Left, Right : in Unbounded_String) return Unbounded_String;
-   -- function "&" (Left: in Unbounded_String; Right: in String) return
-   -- Unbounded_String; function "&" (Left: in Unbounded_String; Right:
-   -- in Integer) return Unbounded_String; function "&" (Left: in
-   -- Unbounded_String; Right: in Float) return Unbounded_String; function "&"
-   -- (Left: in String; Right: in Unbounded_String ) return Unbounded_String;
-   -- function "&" (Left: in Integer; Right: in Unbounded_String )
-   -- return Unbounded_String; function "&" (Left: in Float; Right:
-   -- in Unbounded_String ) return Unbounded_String;
-   function Compter
-     (Chaine : in Unbounded_String; Schema : in Character) return Integer;
-   function Chemin (Nom_Fichier : in Unbounded_String) return String;
-   function Nom (Nom_Fichier : in Unbounded_String) return String;
-   procedure Afficher_Aide;
-   procedure Nettoyer_Console;
-   procedure Lire_Args
-     (Nom_Fichier : out Unbounded_String; A : out T_Double;
-      Max_Iter    : out Integer; P : out Boolean; Aide : out Boolean);
-   procedure Estimer_Donnees (Taille : in Integer; Max_Iter : in Integer);
+   function "+" (Item : in String) return Unbounded_String;
+   function Lire_Arugments return Args;
+   function Est_Nom_Fichier_Net(Argument : in String) return Boolean;
+   procedure Log(Message : in String);
+   procedure Log_P(Progression : in Integer; Max : in Integer);
+   procedure Log_Matlab(Duree : in Integer);
 
-private
+   function Chemin (Nom_Fichier : in String) return String;
+   function Nom (Nom_Fichier : in String) return String;
+   function Octets (R : in Integer) return Integer;
+   function Humaniser (Duree : in Duration) return String;
+
+   private
+      procedure Nettoyer_Console;
+      procedure Afficher_Aide;
 
 end Helpers;
