@@ -39,7 +39,7 @@ List of subjects:
 | [Informatique](https://github.com/seba1204/cours#-informatique)                                                  | ```info```  |
 | [TIPE](https://github.com/seba1204/cours#-tipe)                                                                  | ```tipe```  |
 
-## ENSEEIHT
+## ENSEEIHT (```n7```)
 
 | School  | [ENSEEIHT]([www.enseeiht.fr](https://www.enseeiht.fr/)) |
 | ------- | ------------------------------------------------------- |
