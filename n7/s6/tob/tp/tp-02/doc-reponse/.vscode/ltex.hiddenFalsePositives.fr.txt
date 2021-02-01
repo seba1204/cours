@@ -1,0 +1,2 @@
+{"rule":"FR_SPELLING_RULE","sentence":"^\\QTP Circularité Informatique Lycée Antoine Bourdelle\\E$"}
+{"rule":"FR_SPELLING_RULE","sentence":"^\\QTP Circularité Informatique ENSEEIHT\\E$"}
