@@ -1,0 +1,13 @@
+Point p1;
+p1 = new Point(3, 4);
+Point p2 = new Point(0, 0); 
+double d = p1.distance(p2);
+p1.translater(6, -2);
+p1.setX(0);
+p1.setY(10);
+Point p3 = p1;
+p3.translater(100, 100);
+p3 = new Point(123, 321);
+p1 = p2 = p3;
+p1.translater(-123, -321);
+d  = new Point(5, 5).distance(new Point(8, 1));

@@ -1,0 +1,106 @@
+\documentclass{sebaClass}
+\title{TP 01}
+\author{PONT Sébastien}
+\date{29 janvier 2021}
+
+\newcommand{\SubTitle}{Points et segments}
+\newcommand{\Subject}{Technologie Objet}
+\newcommand{\Place}{ENSSEIHT}
+
+\renewcommand{\Language}{java}
+\newcommand{\cFF}[3]{\codeFromFile{java}{#1}{#2}{#3}}
+\newcommand{\q}[1]{\textit{\textbf{#1}}\\}
+\newcommand{\ql}[1]{\textit{\textbf{#1}}}
+\newcommand{\rt}[1]{\textcolor{redl}{#1}}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace*{\fill}
+\textit{\underline{Remarque:} Ceci est le document réponse, il ne reprend pas l'intégralité du sujet.}
+\newpage
+
+\section{Exercice 1: Comprendre la classe Point}
+\subsection{Squelette d'une classe Java}
+\q{Expliquer comment on obtient le squelette d’une classe Java à partir de son diagramme d’analyse UML.}
+Les commandes deviennent des méthodes, les requêtes deviennent soit des attributs privés avec leur accesseur, soit des méthodes.
+
+\subsection{Convention en Java}
+\q{Indiquer, s’il y en a, les entorses par rapport aux conventions de programmation Java.}
+Je remarque que la classe \iCode{Point} a ses arguments définis à la fin de la classe, alors que par convention, ils devraient l'être au tout début, avant
+le(s) constructeur(s).
+\section{Exercice 2: Compiler et exécuter}
+Dans cet exercice, nous allons utiliser les outils du JDK (Java Development Kit) pour compiler et exécuter une application.
+\subsection{Lire et comprendre le programme ExempleComprendre}
+Lire le programme \iCode{ExempleComprendre} et dessiner l’évolution de l’état de la mémoire au cours de l’exécution du programme.
+Ceci doit être fait sur le listing, avant toute exécution du programme.
+
+\cFF{./code1.java}{ExempleComprendre simplifié}{exemplecomp}
+
+Je me base sur les lignes du Code\ref{code:exemplecomp} pour le tableau suivant (les valeurs en rouge sont celles qui changent):
+
+\begin{table}[h!]
+   \centering
+   \begin{tabular}{ c | c | c | c | c }
+      ligne n° & p1              & p2              & p3              & d      \\ \hline
+      2        & \rt{(3,4)}      & \dots           & \dots           & \dots  \\
+      3        & (3,4)           & \rt{(0,0)}      & \dots           & \dots  \\
+      4        & (3,4)           & (0,0)           & \dots           & \rt{5} \\
+      5        & \rt{(9, 2)}     & (0,0)           & \dots           & 5      \\
+      6        & (\rt{0}, 2)     & (0,0)           & \dots           & 5      \\
+      7        & (0, \rt{10})    & (0,0)           & \dots           & 5      \\
+      8        & (0, 10)         & (0,0)           & \rt{(0, 10)}    & 5      \\
+      9        & \rt{(100, 110)} & (0,0)           & \rt{(100, 110)} & 5      \\
+      10       & (100, 110)      & (0,0)           & \rt{(123, 321)} & 5      \\
+      11       & \rt{(123, 321)} & \rt{(123, 321)} & (123, 321)      & 5      \\
+      12       & \rt{(0, 0)}     & \rt{(0, 0)}     & \rt{(0, 0)}     & 5      \\
+      12       & (0, 0)          & (0, 0)          & (0, 0)          & \rt{5} \\
+   \end{tabular}
+\end{table}
+
+\subsection{Compiler ExempleComprendre}
+\ql{Compiler le programme} \iCode{ExempleComprendre} \q{fourni.}
+\\
+\commandbox*{javac ./ExempleComprendre.java}
+
+\subsection{Exécution de ExempleComprendre}
+\ql{Exécuter le programme} \iCode{ExempleComprendre} \q{.}
+\\
+\commandbox*{java ./ExempleComprendre}
+
+\subsection{Vérifier les résultats}
+\q{Vérifier que l’exécution donne des résultats compatibles avec l’exécution à la main réalisée à la question 2.1}
+Résultats :
+\shellFromFile{./resultats1.txt}{Résultats de compilation de ExempleComprendre}{resultcomp}
+
+Cela correspond au tableau donnée en réponse de la question 2.1.
+\subsection{Exécuter avec Java Tutor}
+\subsection{Corriger le programme ExempleErreur}
+\ql{Compiler le programme}\iCode{ExempleErreur}\q{. Le compilateur refuse de créer le point à attacher à p1. Est-ce justifié ? Expliquer pourquoi.}
+En effet, cela est justifié, car à la ligne 10 : \iCode{Point p1 = new Point();}, le programme \iCode{ExempleErreur} essaie de créer
+un point sans arguments par défaut, alors que la classe \iCode{Point} a défini un nouveau constructeur qui remplace celui par défaut. Il faut donc
+obligatoirement donner en paramètre des valeurs de \iCode{x} et \iCode{y}.
+\subsection{Durée de vie des objets}
+\ql{Supprimer dans le fichier}\iCode{Point.java}\ql{les commentaires devant l’affichage dans le constructeur et les commentaires
+   à la C (/* */) autour de la méthode} \iCode{finalize}\q{.}
+\ql{Compiler et exécuter le programme}\iCode{CycleVie}\q{. Est-ce que les points sont « détruits » ?}
+Non, les points ne semblent pas être détruits.
+\q{Augmenter le nombre d’itérations (5000, 50000, 500000, etc) jusqu’à ce que les messages de « destruction » apparaissent lors de l’exécution du
+   programme.}
+Les points ont commencé à se détruire après un grand nombre de point généré (plus de 100 000).
+\section{Exercice 3 : Produire la documentation}
+\subsection{Produire la documentation des classes}
+\ql{Utiliser la commande} \commandbox*{javadoc} \q{pour produire la documentation des classes de notre application. Consulter la documentation ainsi
+   engendrée.}
+\subsection{Consulter la documentation de la classe Segment}
+\ql{En consultant la documentation engendrée pour la classe} \iCode{Segment}\ql{, indiquer le sens des paramètres de la méthode} \iCode{translater} \ql{et le but de
+   la méthode }\iCode{afficher}\q{.}
+
+\subsection{Consulter la documentation en ligne}
+\section{Exercice 4: Comprendre et compléter la classe Segment}
+\section{Exercice 5: Définir un schéma particulier}
+
+\end{document}
+

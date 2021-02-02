@@ -1,0 +1,32 @@
+CONSTRUCTEUR Point(3.0, 4.0)
+p1 = (3.0, 4.0)
+CONSTRUCTEUR Point(0.0, 0.0)
+p2 = (0.0, 0.0)
+Distance de p1 a  p2 : 5.0
+> p1.translater(6, -2);
+p1 = (9.0, 2.0)
+> p1.setX(0);
+p1 = (0.0, 2.0)
+> p1.setY(10);
+p1 = (0.0, 10.0)
+> Point p3 = p1;
+p3 = (0.0, 10.0)
+p1 = (0.0, 10.0)
+> p3.translater(100, 100);
+p3 = (100.0, 110.0)
+p1 = (100.0, 110.0)
+> p3 = new Point(123, 321);
+CONSTRUCTEUR Point(123.0, 321.0)
+p3 = (123.0, 321.0)
+p1 = (100.0, 110.0)
+> p1 = p2 = p3;
+p1 = (123.0, 321.0)
+p2 = (123.0, 321.0)
+p3 = (123.0, 321.0)
+> p1.translater(-123, -321);
+p1 = (0.0, 0.0)
+p2 = (0.0, 0.0)
+p3 = (0.0, 0.0)
+CONSTRUCTEUR Point(5.0, 5.0)
+CONSTRUCTEUR Point(8.0, 1.0)
+d = 5.0

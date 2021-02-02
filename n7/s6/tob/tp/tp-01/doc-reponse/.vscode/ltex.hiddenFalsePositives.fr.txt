@@ -1,2 +1,3 @@
 {"rule":"FR_SPELLING_RULE","sentence":"^\\QTP Circularité Informatique Lycée Antoine Bourdelle\\E$"}
 {"rule":"FR_SPELLING_RULE","sentence":"^\\QTP Circularité Informatique ENSEEIHT\\E$"}
+{"rule":"FR_SPELLING_RULE","sentence":"^\\QExpliquer comment on obtient le squelette d'une classe Java à partir de son diagramme d'analyse UML.\\E$"}
