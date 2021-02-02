@@ -78,19 +78,19 @@ Résultats :
 Cela correspond au tableau donnée en réponse de la question 2.1.
 \subsection{Exécuter avec Java Tutor}
 \subsection{Corriger le programme ExempleErreur}
-\ql{Compiler le programme}\iCode{ExempleErreur}\q{. Le compilateur refuse de créer le point à attacher à p1. Est-ce justifié ? Expliquer pourquoi.}
+\ql{Compiler le programme} \iCode{ExempleErreur}\q{. Le compilateur refuse de créer le point à attacher à p1. Est-ce justifié ? Expliquer pourquoi.}
 En effet, cela est justifié, car à la ligne 10 : \iCode{Point p1 = new Point();}, le programme \iCode{ExempleErreur} essaie de créer
 un point sans arguments par défaut, alors que la classe \iCode{Point} a défini un nouveau constructeur qui remplace celui par défaut. Il faut donc
 obligatoirement donner en paramètre des valeurs de \iCode{x} et \iCode{y}.
 \subsection{Durée de vie des objets}
-\ql{Supprimer dans le fichier}\iCode{Point.java}\ql{les commentaires devant l’affichage dans le constructeur et les commentaires
+\ql{Supprimer dans le fichier} \iCode{Point.java} \ql{les commentaires devant l’affichage dans le constructeur et les commentaires
    à la C (/* */) autour de la méthode} \iCode{finalize}\q{.}
-\ql{Compiler et exécuter le programme}\iCode{CycleVie}\q{. Est-ce que les points sont « détruits » ?}
+\ql{Compiler et exécuter le programme} \iCode{CycleVie}\q{. Est-ce que les points sont « détruits » ?}
 Non, les points ne semblent pas être détruits.
 \q{Augmenter le nombre d’itérations (5000, 50000, 500000, etc) jusqu’à ce que les messages de « destruction » apparaissent lors de l’exécution du
    programme.}
-Les points ont commencé à se détruire après un grand nombre de point généré (plus de 100 000).
-\section{Exercice 3 : Produire la documentation}
+Les points ont commencé à se détruire après un grand nombre de points générés (plus de 100 000).
+\section{Exercice 3: Produire la documentation}
 \subsection{Produire la documentation des classes}
 \ql{Utiliser la commande} \commandbox*{javadoc} \q{pour produire la documentation des classes de notre application. Consulter la documentation ainsi
    engendrée.}
